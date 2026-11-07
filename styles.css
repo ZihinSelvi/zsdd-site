@@ -99,6 +99,10 @@ h3{font-size:26px;line-height:1.15}
 .products img{display:block;width:100%;aspect-ratio:1;object-fit:contain;padding:14px;background:var(--beyaz)}
 .products span{display:block;padding:14px 18px 18px;font-weight:700;font-size:18px;border-top:1px solid var(--acik-mavi)}
 
+.skills__t{margin:48px 0 14px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--lacivert)}
+.skills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.skills li{border:2px solid var(--koyu-lacivert);border-radius:999px;padding:9px 20px;font-weight:700;font-size:16px;color:var(--koyu-lacivert)}
+
 /* alt bilgi */
 .foot{background:var(--koyu-lacivert);padding:32px 0;font-size:14px;color:var(--acik-mavi)}
 .foot__in{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
