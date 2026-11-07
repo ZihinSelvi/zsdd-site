@@ -92,15 +92,10 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 .hero__h:hover .w--bold{font-variation-settings:"wght" 500,"wdth" 110}
 .hero .lead{max-width:30em;margin-top:26px}
 
-/* halkalar: logodaki iç içe geçen halkalardan türedi */
-.rings{position:absolute;right:-14%;top:50%;width:min(86vw,1100px);transform:translateY(-52%);opacity:.34;pointer-events:none;z-index:1}
-.rings circle{stroke-dasharray:380 120 260 90;transform-box:fill-box;transform-origin:center;animation:spin 46s linear infinite}
-.rings .r1 circle:nth-child(2),.rings .r2 circle:nth-child(2){animation-duration:34s;animation-direction:reverse;stroke-dasharray:220 80 440 60}
-.rings .r1 circle:nth-child(3),.rings .r2 circle:nth-child(3){animation-duration:26s;stroke-dasharray:160 70 300 50}
-.rings .r2 circle{animation-direction:reverse}
-.rings--c{right:-18%;top:auto;bottom:-10%;transform:none;opacity:.22;width:min(100vw,1100px)}
-@keyframes spin{to{transform:rotate(360deg)}}
-
+/* dağınık logo: fareyle üzerine gelince parçalar toplanıp gerçek logoya dönüşür */
+.asm{position:absolute;right:clamp(20px,6vw,90px);top:52%;width:clamp(190px,22vw,300px);aspect-ratio:1;overflow:visible;z-index:1;pointer-events:none}
+.asm--c{top:auto;bottom:7%}
+.asm .p{stroke-linecap:butt}
 /* nabız çizgisi */
 .pulse{position:absolute;left:0;right:0;bottom:0;width:100%;height:190px;z-index:2;pointer-events:none}
 .pulse path{stroke-dasharray:1;stroke-dashoffset:1}
@@ -227,7 +222,8 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
   .row{grid-template-columns:1fr 64px;padding:34px 0}
   .row p{grid-column:1 / 2}
   .row__a{grid-row:1;grid-column:2}
-  .rings{right:-45%;width:150vw;opacity:.4}
+  .asm{top:auto;bottom:22px;width:110px;right:var(--yan)}
+  .asm--c{bottom:30px;width:130px}
   .pulse{height:130px}
   .hero__in{padding-bottom:170px}
   .nav-toggle{display:block;z-index:62}
