@@ -6,15 +6,16 @@
 <title>Zihni Selvi Dijital Danışmanlık</title>
 <meta name="description" content="İşletmelerin dijital şirket doktoru. Pazarlama, tasarım ve süreç otomasyonu danışmanlığı; matbaa ve reklam malzemeleri tedariği. Beykoz, İstanbul.">
 <meta property="og:title" content="Zihni Selvi Dijital Danışmanlık">
-<meta property="og:description" content="İşletmelerin dijital şirket doktoru. Pazarlama, tasarım ve otomasyon danışmanlığı.">
+<meta property="og:description" content="İşletmelerin dijital şirket doktoru. Pazarlama, tasarım ve süreç otomasyonu danışmanlığı.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.png">
 <meta name="theme-color" content="#033260">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:image" content="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
@@ -35,140 +36,205 @@
 </head>
 <body>
 
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="cursor" aria-hidden="true"><i></i></div>
+
 <header class="top" id="top">
   <div class="wrap top__in">
     <a class="brand" href="#top" aria-label="Zihni Selvi Dijital Danışmanlık, ana sayfa">
       <img class="brand__mark" src="assets/logo.png" alt="Zihni Selvi Dijital Danışmanlık" width="60" height="60">
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menü</button>
     <nav id="nav" class="nav" aria-label="Ana menü">
-      <a href="#hizmetler">Hizmetler</a>
-      <a href="#whatsapp">WhatsApp sistemi</a>
-      <a href="#yaklasim">Yaklaşım</a>
-      <a href="#matbaa">Matbaa ve reklam</a>
-      <a class="btn btn--sm" href="#iletisim">İletişim</a>
+      <a href="#hizmetler"><span>Hizmetler</span></a>
+      <a href="#sistem"><span>WhatsApp sistemi</span></a>
+      <a href="#yaklasim"><span>Yaklaşım</span></a>
+      <a href="#urunler"><span>Matbaa ve reklam</span></a>
+      <a class="btn btn--sm" href="#iletisim" data-magnet>İletişim</a>
     </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav"><span></span><span></span><b class="sr">Menü</b></button>
   </div>
 </header>
 
 <main>
 
-  <section class="s s--dark hero">
-    <div class="wrap">
-      <p class="eyebrow">İşletmelerin dijital şirket doktoru</p>
-      <h1>Süreçleriniz nerede aksıyor?</h1>
-      <p class="lead">İşletmelerin en çok zaman kaybettiği yerler genellikle aynıdır: geç verilen cevaplar, dağınık sosyal medya ve elle yapılan tekrar işler. Önce teşhis koyuyoruz, sonra sade bir çözüm kuruyoruz.</p>
-      <div class="actions">
-        <a class="btn" href="https://wa.me/905332218961" rel="noopener">WhatsApp'tan yazın</a>
+  <!-- HERO -->
+  <section class="hero" id="giris">
+    <svg class="rings" viewBox="0 0 800 500" aria-hidden="true" data-parallax="-24">
+      <g class="rings__g" fill="none" stroke-width="22">
+        <g class="r r1"><circle cx="300" cy="250" r="210" stroke="#afe1fb"/><circle cx="300" cy="250" r="150" stroke="#014aad"/><circle cx="300" cy="250" r="90" stroke="#139ed5"/></g>
+        <g class="r r2"><circle cx="500" cy="250" r="210" stroke="#afe1fb"/><circle cx="500" cy="250" r="150" stroke="#014aad"/><circle cx="500" cy="250" r="90" stroke="#139ed5"/></g>
+      </g>
+    </svg>
+    <div class="wrap hero__in">
+      <p class="eyebrow rv">İşletmelerin dijital şirket doktoru</p>
+      <h1 class="hero__h" aria-label="Süreçleriniz nerede aksıyor?">
+        <span class="ln"><span class="w w--thin">Süreçleriniz</span></span>
+        <span class="ln"><span class="w w--bold">nerede</span> <span class="w w--line">aksıyor?</span></span>
+      </h1>
+      <p class="lead rv">İşletmelerin en çok zaman kaybettiği yerler genellikle aynıdır: geç verilen cevaplar, dağınık sosyal medya ve elle yapılan tekrar işler. Önce teşhis koyuyoruz, sonra sade bir çözüm kuruyoruz.</p>
+      <div class="actions rv">
+        <a class="btn" href="https://wa.me/905332218961" rel="noopener" data-magnet>WhatsApp'tan yazın</a>
         <a class="link" href="#hizmetler">Hizmetlere bakın</a>
       </div>
     </div>
-    <ul class="hero__strip wrap" aria-label="Çalışma alanları">
-      <li>Pazarlama</li><li>Tasarım</li><li>Süreç otomasyonu</li><li>Matbaa ve reklam tedariği</li>
-    </ul>
+    <svg class="pulse" viewBox="0 0 1600 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path id="pulsePath" d="M0 120 H300 L340 120 L370 60 L410 170 L450 20 L490 120 H760 L800 120 L830 70 L870 160 L910 40 L950 120 H1180 C1260 120 1300 110 1360 80 S1500 30 1600 14" fill="none" stroke="#139ed5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+    </svg>
   </section>
 
+  <!-- BAND -->
+  <section class="band" aria-label="Verdiğimiz hizmetler">
+    <div class="band__t">
+      <ul class="band__row">
+        <li class="b-thin">Sosyal Medya Pazarlaması</li><li class="dot" aria-hidden="true"></li>
+        <li class="b-bold">Dijital Pazarlama</li><li class="dot" aria-hidden="true"></li>
+        <li class="b-thin">Pazarlama Danışmanlığı</li><li class="dot" aria-hidden="true"></li>
+        <li class="b-bold">Çevrimiçi Reklamcılık</li><li class="dot" aria-hidden="true"></li>
+        <li class="b-thin">Reklam Tasarımı</li><li class="dot" aria-hidden="true"></li>
+        <li class="b-bold">Grafik Tasarımı</li><li class="dot" aria-hidden="true"></li>
+        <li class="b-thin">Müşteri Hizmetleri</li><li class="dot" aria-hidden="true"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HİZMETLER -->
   <section class="s s--light" id="hizmetler">
     <div class="wrap">
-      <p class="eyebrow">Ana hizmet</p>
-      <h2>Dijital danışmanlık</h2>
-      <p class="lead">Açıkhava reklamcılığından geliyoruz. Bugün pazarlama, tasarım ve süreç otomasyonuyla işletmelerin şirket doktoru gibi çalışıyoruz.</p>
-      <div class="cards">
-        <article class="card">
+      <p class="eyebrow rv">Ana hizmet</p>
+      <h2 class="rv"><span class="t-thin">Dijital</span> <span class="t-bold">danışmanlık</span></h2>
+      <p class="lead rv">Açıkhava reklamcılığından geliyoruz. Bugün pazarlama, tasarım ve süreç otomasyonuyla işletmelerin şirket doktoru gibi çalışıyoruz.</p>
+      <ul class="rows">
+        <li class="row rv">
           <h3>Pazarlama</h3>
           <p>Sosyal medya ve dijital pazarlamanızı dağınıklıktan çıkarıyoruz. Hedef kitlenizi, mesajınızı ve kanallarınızı birlikte netleştiriyoruz.</p>
-        </article>
-        <article class="card">
+          <span class="row__a" aria-hidden="true"></span>
+        </li>
+        <li class="row rv">
           <h3>Tasarım</h3>
           <p>Reklam ve grafik tasarımında, gönderiden kataloğa ve web sayfasına kadar tek bir görsel dil kuruyoruz. Marka kitiniz varsa ona sadık kalıyoruz.</p>
-        </article>
-        <article class="card">
+          <span class="row__a" aria-hidden="true"></span>
+        </li>
+        <li class="row rv">
           <h3>Süreç otomasyonu</h3>
           <p>Geç verilen cevapları ve elle yapılan tekrar işleri azaltıyoruz. Müşteri hizmetlerinizi hızlandırıyor, çözümü sade tutuyoruz.</p>
-        </article>
-      </div>
-      <p class="skills__t">Verdiğimiz hizmetler</p>
-      <ul class="skills">
-        <li>Sosyal Medya Pazarlaması</li>
-        <li>Dijital Pazarlama</li>
-        <li>Pazarlama Danışmanlığı</li>
-        <li>Çevrimiçi Reklamcılık</li>
-        <li>Reklam Tasarımı</li>
-        <li>Grafik Tasarımı</li>
-        <li>Müşteri Hizmetleri</li>
+          <span class="row__a" aria-hidden="true"></span>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section class="s s--mid" id="whatsapp">
+  <!-- WHATSAPP SİSTEMİ -->
+  <section class="s s--mid" id="sistem">
     <div class="wrap split">
       <div>
-        <p class="eyebrow">Bugün en çok istenen</p>
-        <h2>WhatsApp Hızlı Yanıt Sistemi</h2>
-        <p class="lead">Müşterinin WhatsApp'tan sorduğu fiyata, sizin fiyat listenizle cevap veren bir sistem. Matbaa ve reklam işletmeleri için demo olarak kurduk; çalışışını size gösterebiliriz.</p>
-        <a class="btn btn--light" href="https://zihinselvi.github.io/fiyat-botu/" rel="noopener">Sistemi inceleyin</a>
+        <p class="eyebrow rv">Bugün en çok istenen</p>
+        <h2 class="rv"><span class="t-bold">WhatsApp</span><br><span class="t-thin">Hızlı Yanıt Sistemi</span></h2>
+        <p class="lead rv">Müşterinin WhatsApp'tan sorduğu fiyata, sizin fiyat listenizle cevap veren bir sistem. Matbaa ve reklam işletmeleri için demo olarak kurduk; çalışışını size gösterebiliriz.</p>
+        <ul class="ticks rv">
+          <li>Sizin fiyat listenizle yanıt verir</li>
+          <li>Önce gölge modda çalışır</li>
+          <li>Müşteriye bir şey gitmez, karar sizde kalır</li>
+        </ul>
+        <a class="btn btn--light rv" href="https://zihinselvi.github.io/fiyat-botu/" rel="noopener" data-magnet>Sistemi inceleyin</a>
       </div>
-      <ul class="plist plist--soft" aria-label="Ne işe yarar">
-        <li>Sizin fiyat listenizle yanıt verir</li>
-        <li>Önce gölge modda çalışır</li>
-        <li>Müşteriye bir şey gitmez, karar sizde kalır</li>
-      </ul>
+      <div class="phonewrap rv">
+        <p class="phone__cap">Örnek akış</p>
+        <div class="phone" id="phone" role="img" aria-label="Örnek akış: müşteri fiyat sorar, sistem fiyat listesinden taslak yanıt hazırlar, siz onaylayınca yanıt gider.">
+          <div class="phone__bar"><i></i><b>Müşteri</b><small>çevrimiçi</small></div>
+          <div class="chat" id="chat">
+            <div class="msg msg--in" data-step="1">Merhaba, roll-up banner fiyatı nedir?</div>
+            <div class="typing" data-step="2"><i></i><i></i><i></i></div>
+            <div class="msg msg--draft" data-step="3">
+              <small>Taslak yanıt · gölge mod</small>
+              Merhaba! Roll-up banner fiyat listemizde <u>₺ ···</u> olarak kayıtlı. Ölçü ve adedi yazarsanız net teklifi hemen iletelim.
+              <span class="acts"><em>Düzenle</em><strong>Onayla ve gönder</strong></span>
+            </div>
+            <div class="msg msg--out" data-step="4">Merhaba! Roll-up banner fiyat listemizde <u>₺ ···</u> olarak kayıtlı. Ölçü ve adedi yazarsanız net teklifi hemen iletelim.<small>Gönderildi · onayınızla</small></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- YAKLAŞIM -->
   <section class="s s--dark" id="yaklasim">
     <div class="wrap">
-      <p class="eyebrow">Yaklaşımımız</p>
-      <h2>İddia yerine süreç ve kanıt.</h2>
-      <ol class="four">
-        <li><h3>Teşhis</h3><p>İşletmenizi dinliyor, belirtiden nedene giderek sorunun gerçek yerini buluyoruz.</p></li>
-        <li><h3>Saha</h3><p>Çözümü masada değil, izin, sözleşme, tedarik ve takvim gerçekleriyle kuruyoruz.</p></li>
-        <li><h3>Kanıt</h3><p>İddia yerine ölçüm: yaptığımız işin sonucunu sizinle birlikte ölçüyor, işe yarayanı büyütüyoruz.</p></li>
-        <li><h3>Bakış</h3><p>Dijital araçları ve yapay zekâyı sade dille anlatıyor, size gereksiz yazılım satmıyoruz.</p></li>
+      <p class="eyebrow rv">Yaklaşımımız</p>
+      <h2 class="rv"><span class="t-thin">İddia yerine</span> <span class="t-bold">süreç ve kanıt.</span></h2>
+      <ol class="pillars">
+        <li class="pillar" data-weight>
+          <span class="pillar__w">Teşhis</span>
+          <p>İşletmenizi dinliyor, belirtiden nedene giderek sorunun gerçek yerini buluyoruz.</p>
+        </li>
+        <li class="pillar" data-weight>
+          <span class="pillar__w">Saha</span>
+          <p>Çözümü masada değil, izin, sözleşme, tedarik ve takvim gerçekleriyle kuruyoruz.</p>
+        </li>
+        <li class="pillar" data-weight>
+          <span class="pillar__w">Kanıt</span>
+          <p>İddia yerine ölçüm: yaptığımız işin sonucunu sizinle birlikte ölçüyor, işe yarayanı büyütüyoruz.</p>
+        </li>
+        <li class="pillar" data-weight>
+          <span class="pillar__w">Bakış</span>
+          <p>Dijital araçları ve yapay zekâyı sade dille anlatıyor, size gereksiz yazılım satmıyoruz.</p>
+        </li>
       </ol>
       <ol class="path" aria-label="Geçmiş">
-        <li><span class="path__d">2005 – 2014</span><h3>Açıkhava reklamcılığı</h3><p>Operasyon yönetimi: reklam alanı tedariki, izinler ve sözleşmeler.</p></li>
-        <li><span class="path__d">Ağustos 2023 – günümüz</span><h3>Zihni Selvi Dijital Danışmanlık</h3><p>Küçük ve orta ölçekli işletmelere pazarlama, tasarım ve süreç otomasyonu danışmanlığı.</p></li>
+        <li class="rv"><span class="path__d">2005 – 2014</span><h3>Açıkhava reklamcılığı</h3><p>Operasyon yönetimi: reklam alanı tedariki, izinler ve sözleşmeler.</p></li>
+        <li class="rv"><span class="path__d">Ağustos 2023 – günümüz</span><h3>Zihni Selvi Dijital Danışmanlık</h3><p>Küçük ve orta ölçekli işletmelere pazarlama, tasarım ve süreç otomasyonu danışmanlığı.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="s s--light" id="matbaa">
+  <!-- ÜRÜNLER -->
+  <section class="s s--light s--products" id="urunler">
     <div class="wrap">
-      <p class="eyebrow">Ek hizmet</p>
-      <h2>Matbaa ve reklam malzemeleri tedariği</h2>
-      <p class="lead">Matbaa ve reklam malzemelerini tedarikçilerimizden temin ediyoruz. Ürün ve fiyat bilgisi için bize yazın. Fotoğraflar tedarikçi kataloğundan alınmıştır.</p>
-      <ul class="products" aria-label="Ürünler">
-        <li><img src="assets/urunler/reklam-dubasi.jpg" alt="Reklam dubaları" loading="lazy" width="280" height="280"><span>Reklam dubaları</span></li>
-        <li><img src="assets/urunler/tabela.jpg" alt="Tabelalar" loading="lazy" width="280" height="280"><span>Tabelalar</span></li>
-        <li><img src="assets/urunler/ruzgar-panosu.jpg" alt="Rüzgâr panoları" loading="lazy" width="280" height="280"><span>Rüzgâr panoları</span></li>
-        <li><img src="assets/urunler/x-banner.jpg" alt="X banner" loading="lazy" width="280" height="280"><span>X banner</span></li>
-        <li><img src="assets/urunler/tanitim-standi.jpg" alt="Tanıtım standı" loading="lazy" width="280" height="280"><span>Tanıtım standı</span></li>
-        <li><img src="assets/urunler/serit-bariyer.jpg" alt="Şerit bariyer" loading="lazy" width="280" height="280"><span>Şerit bariyer</span></li>
-        <li><img src="assets/urunler/bariyer-halati.jpg" alt="Bariyer halatı" loading="lazy" width="280" height="280"><span>Bariyer halatı</span></li>
-        <li><img src="assets/urunler/trafik-konisi.jpg" alt="Trafik konisi" loading="lazy" width="280" height="280"><span>Trafik konisi</span></li>
-        <li><img src="assets/urunler/delinator.jpg" alt="Delinatör" loading="lazy" width="280" height="280"><span>Delinatör</span></li>
-        <li><img src="assets/urunler/turk-bayragi.jpg" alt="Türk bayrağı" loading="lazy" width="280" height="280"><span>Türk bayrağı</span></li>
-        <li><img src="assets/urunler/masa-bayraklari.jpg" alt="Masa bayrakları" loading="lazy" width="280" height="280"><span>Masa bayrakları</span></li>
-        <li><img src="assets/urunler/branda.jpg" alt="Branda" loading="lazy" width="280" height="280"><span>Branda</span></li>
+      <p class="eyebrow rv">Ek hizmet</p>
+      <h2 class="rv"><span class="t-thin">Matbaa ve reklam</span> <span class="t-bold">malzemeleri tedariği</span></h2>
+      <p class="lead rv">Matbaa ve reklam malzemelerini tedarikçilerimizden temin ediyoruz. Ürün ve fiyat bilgisi için bize yazın.</p>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Ürünler, yatay kaydırın">
+      <ul class="rail__t">
+        <li class="card" data-tilt><img src="assets/urunler/reklam-dubasi.jpg" alt="" loading="lazy" width="280" height="280"><span>Reklam dubaları</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/tabela.jpg" alt="" loading="lazy" width="280" height="280"><span>Tabelalar</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/ruzgar-panosu.jpg" alt="" loading="lazy" width="280" height="280"><span>Rüzgâr panoları</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/x-banner.jpg" alt="" loading="lazy" width="280" height="280"><span>X banner</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/tanitim-standi.jpg" alt="" loading="lazy" width="280" height="280"><span>Tanıtım standı</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/serit-bariyer.jpg" alt="" loading="lazy" width="280" height="280"><span>Şerit bariyer</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/bariyer-halati.jpg" alt="" loading="lazy" width="280" height="280"><span>Bariyer halatı</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/trafik-konisi.jpg" alt="" loading="lazy" width="280" height="280"><span>Trafik konisi</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/delinator.jpg" alt="" loading="lazy" width="280" height="280"><span>Delinatör</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/turk-bayragi.jpg" alt="" loading="lazy" width="280" height="280"><span>Türk bayrağı</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/masa-bayraklari.jpg" alt="" loading="lazy" width="280" height="280"><span>Masa bayrakları</span></li>
+        <li class="card" data-tilt><img src="assets/urunler/branda.jpg" alt="" loading="lazy" width="280" height="280"><span>Branda</span></li>
       </ul>
-      <a class="btn btn--dark" href="mailto:zihni@zihniselvidijitaldanismanlik.com?subject=Matbaa%20ve%20reklam%20malzemeleri%20teklifi">Teklif isteyin</a>
+    </div>
+    <div class="wrap rail__ctl">
+      <div class="rail__btns">
+        <button class="rbtn" data-dir="-1" aria-label="Geri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="rbtn" data-dir="1" aria-label="İleri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <a class="btn btn--dark" href="mailto:zihni@zihniselvidijitaldanismanlik.com?subject=Matbaa%20ve%20reklam%20malzemeleri%20teklifi" data-magnet>Teklif isteyin</a>
     </div>
   </section>
 
-  <section class="s s--dark" id="iletisim">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">İletişim</p>
-        <h2>Tıkanan yeri birlikte bulalım.</h2>
-        <p class="lead">İşinizde nerede zaman ya da müşteri kaybettiğinizi merak ediyorsanız mesaj atın, birlikte bakalım.</p>
-        <a class="btn" href="https://wa.me/905332218961" rel="noopener">WhatsApp'tan yazın</a>
+  <!-- İLETİŞİM -->
+  <section class="s s--dark s--contact" id="iletisim">
+    <svg class="rings rings--c" viewBox="0 0 800 500" aria-hidden="true" data-parallax="18">
+      <g fill="none" stroke-width="22"><g class="r r1"><circle cx="300" cy="250" r="210" stroke="#afe1fb"/><circle cx="300" cy="250" r="150" stroke="#014aad"/><circle cx="300" cy="250" r="90" stroke="#139ed5"/></g><g class="r r2"><circle cx="500" cy="250" r="210" stroke="#afe1fb"/><circle cx="500" cy="250" r="150" stroke="#014aad"/><circle cx="500" cy="250" r="90" stroke="#139ed5"/></g></g>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow rv">İletişim</p>
+      <h2 class="big rv"><span class="t-thin">Tıkanan yeri</span><br><span class="t-bold">birlikte bulalım.</span></h2>
+      <p class="lead rv">İşinizde nerede zaman ya da müşteri kaybettiğinizi merak ediyorsanız mesaj atın, birlikte bakalım.</p>
+      <div class="actions rv">
+        <a class="btn btn--lg" href="https://wa.me/905332218961" rel="noopener" data-magnet>WhatsApp'tan yazın</a>
+        <a class="mail" href="mailto:zihni@zihniselvidijitaldanismanlik.com">zihni@zihniselvidijitaldanismanlik.com</a>
       </div>
-      <dl class="contact">
-        <div><dt>E-posta</dt><dd><a href="mailto:zihni@zihniselvidijitaldanismanlik.com">zihni@zihniselvidijitaldanismanlik.com</a></dd></div>
+      <dl class="contact rv">
         <div><dt>WhatsApp</dt><dd><a href="https://wa.me/905332218961" rel="noopener">+90 533 221 89 61</a></dd></div>
-        <div><dt>Adres</dt><dd><address>Anadolufeneri Mahallesi<br>Fener Caddesi No:20<br>Beykoz, İstanbul</address>
-          <a href="https://www.google.com/maps/search/?api=1&query=Anadolufeneri+Mahallesi+Fener+Caddesi+No+20+Beykoz+%C4%B0stanbul" rel="noopener">Haritada aç</a></dd></div>
+        <div><dt>Adres</dt><dd><address>Anadolufeneri Mahallesi, Fener Caddesi No:20<br>Beykoz, İstanbul</address>
+          <a class="small" href="https://www.google.com/maps/search/?api=1&query=Anadolufeneri+Mahallesi+Fener+Caddesi+No+20+Beykoz+%C4%B0stanbul" rel="noopener">Haritada aç</a></dd></div>
       </dl>
     </div>
   </section>
@@ -177,7 +243,7 @@
 
 <footer class="foot">
   <div class="wrap foot__in">
-    <img class="foot__logo" src="assets/logo.png" alt="Zihni Selvi Dijital Danışmanlık logosu" width="120" height="120">
+    <img class="foot__logo" src="assets/logo.png" alt="Zihni Selvi Dijital Danışmanlık logosu" width="96" height="96">
     <span class="sig">ZİHNİ SELVİ · DİJİTAL DANIŞMANLIK</span>
     <span>© <span id="yil">2026</span> Tüm hakları saklıdır.</span>
   </div>
