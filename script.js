@@ -176,7 +176,7 @@
           rot: sgn * (55 + rnd(i + 21) * 70), dr: (rnd(i + 11) - .5) * 360, tx: (rnd(i + 41) - .5) * 140, ty: (rnd(i + 51) - .5) * 140,
           d: layer * .24 + grp * .12 + rnd(i + 31) * .08, ph: rnd(i + 61) * 6.28, sp: .5 + rnd(i + 71) * .6 };
       });
-      var k = 1, L = 0, T = 0, a = 0, target = 0, hold = 0, vis = false, px = -1, py = -1, last = 0, autoOn = false;
+      var k = 1, L = 0, T = 0, a = 0, target = 0, hold = 0, vis = false, px = -1, py = -1, last = 0, auto = !fine, auto0 = 0, tapUntil = 0;
 
       function layout() {
         var s = sec.getBoundingClientRect(), vw = window.innerWidth, small = vw < 900;
@@ -203,9 +203,13 @@
         });
       }
       function loop(t) {
-        if (!vis) return;
-        var dt = Math.min(60, t - last) || 16; last = t;
-        if (target === 1 && !autoOn) {
+        if (!vis) { running = false; return; }
+        var dt = Math.min(60, Math.max(0, t - last)) || 16; last = t;
+        if (auto) {
+          /* dokunmatik: kendiliğinden döngü (bekle, topla, tut, dağıl); dokunuş toplanmayı anında başlatır ve tutar */
+          var ph = (t - auto0) % 11000;
+          target = (ph > 900 && ph < 6800) || t < tapUntil ? 1 : 0;
+        } else if (target === 1) {
           if (px >= 0 && inZone(px, py)) hold = Math.max(hold, t + 1200);
           if (t > hold) target = 0;
         }
@@ -213,28 +217,27 @@
         if (a < target) a = Math.min(target, a + step); else if (a > target) a = Math.max(target, a - step * 1.2);
         draw(t); requestAnimationFrame(loop);
       }
-      var cyc = [];
-      function cycle() {
-        cyc.forEach(clearTimeout); cyc = [];
-        if (!autoOn) return;
-        cyc.push(setTimeout(function () { target = 1; }, 900));
-        cyc.push(setTimeout(function () { target = 0; }, 6200));
-        cyc.push(setTimeout(cycle, 10600));
-      }
+      var running = false;
       layout(); draw(0);
+      function start() { if (running) return; running = true; last = performance.now(); auto0 = last; requestAnimationFrame(loop); }
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (es) {
-          var was = vis; vis = es[0].isIntersecting;
-          if (vis && !was) { layout(); last = performance.now(); requestAnimationFrame(loop); }
-          if (!fine) { autoOn = vis; if (vis) cycle(); }
-        }, { threshold: .2 }).observe(sec);
-      } else { vis = true; requestAnimationFrame(loop); }
+          vis = es[0].isIntersecting;
+          if (vis) { layout(); start(); }
+        }, { threshold: .1 }).observe(sec);
+      } else { vis = true; start(); }
       window.addEventListener('resize', layout);
       window.addEventListener('scroll', function () { if (vis) { var r = svg.getBoundingClientRect(); L = r.left; T = r.top; } }, { passive: true });
-      if (fine) window.addEventListener('pointermove', function (e) {
+      window.addEventListener('pointermove', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        auto = false;                                   /* gerçek fare: dokunmatik döngüyü bırak */
         if (!vis) return; px = e.clientX; py = e.clientY;
         if (inZone(px, py)) { target = 1; hold = performance.now() + 3200; }
       });
+      window.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'mouse' || !vis) return;
+        if (inZone(e.clientX, e.clientY)) tapUntil = performance.now() + 5200;
+      }, { passive: true });
     });
   })();
 })();
