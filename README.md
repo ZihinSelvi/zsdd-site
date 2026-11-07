@@ -14,6 +14,7 @@ Zihni Selvi Dijital Danışmanlık (ZSDD) tanıtım sitesi. Alan adı: `zihnisel
 | `assets/logo.png` | ZSDD logosu (kullanıcının gönderdiği özgün görsel, değiştirilmedi) |
 | `assets/urunler/` | Ek hizmet kartlarının fotoğrafları |
 | `favicon.png`, `apple-touch-icon.png` | Logodan üretildi |
+| `onizleme/ZSDD-site-onizleme.html` | Sitenin son hâli tek dosyada (görseller ve kod içinde). İndirip çift tıklayınca tarayıcıda açılır. Yayın için gerekmez, yedek ve gösterim içindir |
 
 Derleme adımı yok, saf HTML/CSS/JS. Yazı tipleri Google Fonts'tan gelir.
 
