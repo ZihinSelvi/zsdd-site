@@ -9,7 +9,7 @@
   --yan:clamp(20px,5vw,64px);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;font-family:var(--sans);font-weight:500;font-size:18px;line-height:1.55;color:var(--beyaz);background:var(--koyu-lacivert);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--mavi);outline-offset:3px}
@@ -17,9 +17,9 @@ a{color:inherit}
 
 /* üst çubuk */
 .top{position:sticky;top:0;z-index:10;background:var(--koyu-lacivert);border-bottom:1px solid rgba(175,225,251,.2)}
-.top__in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.top__in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand__mark{width:44px;height:44px;flex:none;border-radius:6px}
+.brand__mark{width:60px;height:60px;flex:none;border-radius:6px}
 .brand__name{display:flex;flex-direction:column;font-weight:700;font-size:17px;line-height:1.1}
 .brand__name small{font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acik-mavi);margin-top:3px}
 .nav{display:flex;align-items:center;gap:28px}
@@ -124,7 +124,7 @@ h3{font-size:26px;line-height:1.15}
   .products{grid-template-columns:repeat(2,1fr);gap:12px}
   .split{grid-template-columns:1fr}
   .nav-toggle{display:block}
-  .nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--koyu-lacivert);padding:8px var(--yan) 24px;border-bottom:1px solid rgba(175,225,251,.2)}
+  .nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--koyu-lacivert);padding:8px var(--yan) 24px;border-bottom:1px solid rgba(175,225,251,.2)}
   .nav.is-open{display:flex}
   .nav a{padding:14px 0;width:100%;font-size:19px}
   .nav .btn{width:auto;margin-top:8px}
