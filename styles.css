@@ -203,7 +203,6 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 .contact dd{margin:0;font-size:22px;font-weight:600}
 .contact address{font-style:normal}
 .contact a{text-underline-offset:4px}
-.contact .small{display:inline-block;margin-top:10px;font-size:16px;font-weight:500;color:var(--am)}
 
 /* alt bilgi */
 .foot{background:var(--kl);padding:36px 0;font-size:14px;color:var(--am);border-top:1px solid rgba(175,225,251,.2)}
