@@ -94,8 +94,10 @@ h3{font-size:26px;line-height:1.15}
 .four li{border-top:4px solid var(--mavi);padding-top:24px}
 .four h3{font-size:24px;text-transform:uppercase;letter-spacing:.08em;color:var(--mavi)}
 .four p{margin:14px 0 0;color:var(--acik-mavi);font-size:17px}
-.tags{list-style:none;margin:40px 0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
-.tags li{border:2px solid var(--koyu-lacivert);border-radius:999px;padding:9px 20px;font-weight:700;font-size:16px}
+.products{list-style:none;margin:48px 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.products li{background:var(--beyaz);border-radius:16px;overflow:hidden;color:var(--koyu-lacivert)}
+.products img{display:block;width:100%;aspect-ratio:1;object-fit:contain;padding:14px;background:var(--beyaz)}
+.products span{display:block;padding:14px 18px 18px;font-weight:700;font-size:18px;border-top:1px solid var(--acik-mavi)}
 
 /* alt bilgi */
 .foot{background:var(--koyu-lacivert);padding:32px 0;font-size:14px;color:var(--acik-mavi)}
@@ -105,6 +107,7 @@ h3{font-size:26px;line-height:1.15}
 /* mobil */
 @media (max-width:860px){
   .cards,.steps,.four{grid-template-columns:1fr}
+  .products{grid-template-columns:repeat(2,1fr);gap:12px}
   .split{grid-template-columns:1fr}
   .nav-toggle{display:block}
   .nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--koyu-lacivert);padding:8px var(--yan) 24px;border-bottom:1px solid rgba(175,225,251,.2)}
