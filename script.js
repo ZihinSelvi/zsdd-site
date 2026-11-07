@@ -24,7 +24,7 @@
     var i = sibs.indexOf(el);
     el.style.setProperty('--d', (Math.min(i, 6) * 0.09) + 's');
   });
-  if ('IntersectionObserver' in window && !reduce) {
+  if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
@@ -79,8 +79,7 @@
       dot.style.left = (r.left - hr.left + ox + pt.x * s) + 'px';
       dot.style.top = (r.top - hr.top + oy + pt.y * s) + 'px';
     }
-    if (reduce) { path.style.strokeDashoffset = 0; }
-    else {
+    {
       var step = function (t) {
         if (t0 === null) t0 = t;
         var e = (t - t0) / 1000;
@@ -160,86 +159,82 @@
     });
   }
 
-  /* dağınık logo -> gerçek logo */
+  /* dağınık logo halkaları: imleç üzerine gelince parçalar sırayla, kendi halkaları boyunca kayarak yerine oturur */
   (function () {
-    var C = { x: 1000, y: 794 }, EMB = 1295;
-    var PAL0 = ['#afe1fb', '#014aad', '#139ed5'];      /* dağınık: marka renkleri */
-    var PAL1 = ['#cdecff', '#004aac', '#0b3269'];      /* birleşik: logonun kendi renkleri */
-    function hex(h) { return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; }
-    function mix(a, b, t) { var A = hex(a), B = hex(b); return 'rgb(' + [0, 1, 2].map(function (i) { return Math.round(A[i] + (B[i] - A[i]) * t); }).join(',') + ')'; }
-    function sm(t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); }
+    var C = { x: 1000, y: 794 }, EMB = 1295, DUR = 2800;
+    var COL = ['#afe1fb', '#014aad', '#139ed5'];
+    function ease(t) { t = Math.max(0, Math.min(1, t)); return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
     function rnd(n) { var x = Math.sin(n * 91.7 + 3.1) * 10000; return x - Math.floor(x); }
 
     $$('svg[data-asm]').forEach(function (svg) {
       var mode = svg.getAttribute('data-asm'), sec = svg.parentElement;
-      var grp = $('.asm__g', svg), img = $('.asm__img', svg);
       var ps = $$('.p', svg).map(function (el, i) {
-        return { el: el, c: +el.getAttribute('data-c'), mx: +el.getAttribute('data-mx'), my: +el.getAttribute('data-my'),
-          dx: (rnd(i + 1) - .5) * 520, dy: (rnd(i + 11) - .5) * 520, rot: (rnd(i + 21) - .5) * 90,
-          d: rnd(i + 31), ph: rnd(i + 41) * 6.28, sp: .5 + rnd(i + 51) * .6 };
+        var cx = +el.getAttribute('data-cx'), cy = +el.getAttribute('data-cy'), mx = +el.getAttribute('data-mx'), my = +el.getAttribute('data-my');
+        var ang = Math.atan2(my - cy, mx - cx), layer = +el.getAttribute('data-c'), grp = +el.getAttribute('data-g');
+        var sgn = rnd(i + 5) > .5 ? 1 : -1;
+        return { el: el, c: layer, cx: cx, cy: cy, ca: Math.cos(ang), sa: Math.sin(ang),
+          rot: sgn * (55 + rnd(i + 21) * 70), dr: (rnd(i + 11) - .5) * 360, tx: (rnd(i + 41) - .5) * 140, ty: (rnd(i + 51) - .5) * 140,
+          d: layer * .24 + grp * .12 + rnd(i + 31) * .08, ph: rnd(i + 61) * 6.28, sp: .5 + rnd(i + 71) * .6 };
       });
-      var S = 3, tx = 0, ty = 0, k = 1, L = 0, T = 0, a = 0, target = 0, hold = 0, vis = false, px = -1, py = -1, last = 0, autoOn = false;
+      var k = 1, L = 0, T = 0, a = 0, target = 0, hold = 0, vis = false, px = -1, py = -1, last = 0, autoOn = false;
 
       function layout() {
-        var r = svg.getBoundingClientRect(), s = sec.getBoundingClientRect(), vw = window.innerWidth, small = vw < 900;
-        k = r.width / 2000; L = r.left; T = r.top;
+        var s = sec.getBoundingClientRect(), vw = window.innerWidth, small = vw < 900;
         var bw = mode === 'hero' ? (small ? 1.5 * vw : Math.min(.86 * vw, 1100)) : Math.min(small ? 1.1 * vw : vw, 1100);
-        var Px = s.left + s.width * (mode === 'hero' ? (small ? .72 : .68) : .82);
-        var Py = s.top + s.height * (mode === 'hero' ? .5 : .8);
-        S = bw / (EMB * k);
-        tx = (Px - L) / k - C.x; ty = (Py - T) / k - C.y;
+        var W = bw * 2000 / EMB;
+        var Px = mode === 'hero' ? s.width * (small ? .72 : .68) : s.width * .82;
+        var Py = mode === 'hero' ? s.height * .5 : s.height * .8;
+        svg.style.width = W + 'px'; svg.style.height = W + 'px';
+        svg.style.left = (Px - W * C.x / 2000) + 'px'; svg.style.top = (Py - W * C.y / 2000) + 'px';
+        var r = svg.getBoundingClientRect(); k = r.width / 2000; L = r.left; T = r.top;
       }
       function inZone(x, y) {
-        var s = 1 + (S - 1) * (1 - a), u = (x - L) / k, v = (y - T) / k;
-        var qx = C.x + (u - C.x - tx * (1 - a)) / s, qy = C.y + (v - C.y - ty * (1 - a)) / s;
-        return Math.hypot(qx - 826, qy - 794) <= 480 || Math.hypot(qx - 1174.5, qy - 794) <= 480;
+        var u = (x - L) / k, v = (y - T) / k;
+        return Math.hypot(u - 826, v - 794) <= 480 || Math.hypot(u - 1174.5, v - 794) <= 480;
       }
       function draw(t) {
-        var s = 1 + (S - 1) * (1 - a), io = sm((a - .82) / .18);
-        grp.setAttribute('transform', 'translate(' + (C.x + tx * (1 - a)) + ' ' + (C.y + ty * (1 - a)) + ') scale(' + s + ') translate(' + (-C.x) + ' ' + (-C.y) + ')');
-        img.setAttribute('opacity', io);
         ps.forEach(function (p) {
-          var ai = sm((a - p.d * .4) / .6), f = 1 - ai, amp = reduce ? 0 : 26 * f;
-          var ox = p.dx * f + Math.sin(t / 1000 * p.sp + p.ph) * amp, oy = p.dy * f + Math.cos(t / 1000 * p.sp * 1.2 + p.ph) * amp;
-          p.el.setAttribute('transform', 'translate(' + ox.toFixed(1) + ' ' + oy.toFixed(1) + ') rotate(' + (p.rot * f).toFixed(1) + ' ' + p.mx + ' ' + p.my + ')');
-          p.el.setAttribute('stroke', mix(PAL0[p.c], PAL1[p.c], ai));
-          p.el.setAttribute('opacity', ((.38 + .62 * ai) * (1 - io)).toFixed(3));
+          var ai = ease((a - p.d * .55) / .45), f = 1 - ai, amp = reduce ? 0 : 24 * f;
+          var ox = (p.dr * p.ca + p.tx) * f + Math.sin(t / 1000 * p.sp + p.ph) * amp;
+          var oy = (p.dr * p.sa + p.ty) * f + Math.cos(t / 1000 * p.sp * 1.2 + p.ph) * amp;
+          p.el.setAttribute('transform', 'translate(' + ox.toFixed(1) + ' ' + oy.toFixed(1) + ') rotate(' + (p.rot * f).toFixed(2) + ' ' + p.cx + ' ' + p.cy + ')');
+          p.el.setAttribute('stroke', COL[p.c]);
+          p.el.setAttribute('opacity', (.36 + .34 * ai).toFixed(3));
         });
       }
       function loop(t) {
         if (!vis) return;
-        var dt = Math.min(50, t - last) || 16; last = t;
-        if (target === 1) {
-          if (px >= 0 && inZone(px, py)) hold = Math.max(hold, t + 900);
-          if (!autoOn && t > hold) target = 0;
+        var dt = Math.min(60, t - last) || 16; last = t;
+        if (target === 1 && !autoOn) {
+          if (px >= 0 && inZone(px, py)) hold = Math.max(hold, t + 1200);
+          if (t > hold) target = 0;
         }
-        if (reduce) a = target;
-        else { a += (target - a) * Math.min(1, dt / 16) * .034 + Math.sign(target - a) * .001; }
-        if (Math.abs(target - a) < .004) a = target;
+        var step = dt / DUR;
+        if (a < target) a = Math.min(target, a + step); else if (a > target) a = Math.max(target, a - step * 1.2);
         draw(t); requestAnimationFrame(loop);
       }
-      var cycTimers = [];
+      var cyc = [];
       function cycle() {
-        cycTimers.forEach(clearTimeout); cycTimers = [];
+        cyc.forEach(clearTimeout); cyc = [];
         if (!autoOn) return;
-        cycTimers.push(setTimeout(function () { target = 1; }, 900));
-        cycTimers.push(setTimeout(function () { target = 0; }, 5200));
-        cycTimers.push(setTimeout(cycle, 9600));
+        cyc.push(setTimeout(function () { target = 1; }, 900));
+        cyc.push(setTimeout(function () { target = 0; }, 6200));
+        cyc.push(setTimeout(cycle, 10600));
       }
+      layout(); draw(0);
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (es) {
           var was = vis; vis = es[0].isIntersecting;
           if (vis && !was) { layout(); last = performance.now(); requestAnimationFrame(loop); }
-          if (!fine && !reduce) { autoOn = vis; if (vis) cycle(); }
-        }, { threshold: .25 }).observe(sec);
-      } else { vis = true; layout(); requestAnimationFrame(loop); }
+          if (!fine) { autoOn = vis; if (vis) cycle(); }
+        }, { threshold: .2 }).observe(sec);
+      } else { vis = true; requestAnimationFrame(loop); }
       window.addEventListener('resize', layout);
-      window.addEventListener('scroll', function () { if (vis) layout(); }, { passive: true });
+      window.addEventListener('scroll', function () { if (vis) { var r = svg.getBoundingClientRect(); L = r.left; T = r.top; } }, { passive: true });
       if (fine) window.addEventListener('pointermove', function (e) {
         if (!vis) return; px = e.clientX; py = e.clientY;
         if (inZone(px, py)) { target = 1; hold = performance.now() + 3200; }
       });
-      layout(); draw(0);
     });
   })();
 })();
