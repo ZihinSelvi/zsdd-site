@@ -214,6 +214,11 @@
         return Math.hypot(u - 826, v - 794) <= 480 || Math.hypot(u - 1174.5, v - 794) <= 480;
       }
       function draw(t) {
+        if (mode === 'hero') {                       /* yazı: halkalar toplanınca kalınlaşır, genişlik dengelenir (satır sonları kaymaz) */
+          var bw = ease((a - .7) / .3);
+          sec.style.setProperty('--lw', (400 + 300 * bw).toFixed(0));
+          sec.style.setProperty('--lwd', (100 - 4 * bw).toFixed(1));
+        }
         ps.forEach(function (p) {
           var ai = ease((a - p.d * .55) / .45), f = 1 - ai, amp = reduce ? 0 : 24 * f;
           var ox = (p.dr * p.ca + p.tx) * f + Math.sin(t / 1000 * p.sp + p.ph) * amp;
