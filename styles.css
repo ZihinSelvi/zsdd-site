@@ -77,13 +77,25 @@ h3{font-size:26px;line-height:1.15}
 
 /* iletişim */
 .contact{margin:0}
-.contact div{padding:20px 0;border-top:2px solid var(--koyu-lacivert)}
-.contact div:last-child{border-bottom:2px solid var(--koyu-lacivert)}
-.contact dt{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--lacivert);margin-bottom:6px}
+.contact div{padding:20px 0;border-top:2px solid var(--acik-mavi)}
+.contact div:last-child{border-bottom:2px solid var(--acik-mavi)}
+.contact dt{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--mavi);margin-bottom:6px}
 .contact dd{margin:0;font-size:21px;font-weight:700;overflow-wrap:anywhere}
 .contact address{font-style:normal}
 .contact dd a{text-underline-offset:4px}
 .contact dd address + a{display:inline-block;margin-top:8px;font-size:16px;font-weight:500}
+
+/* ek bileşenler */
+.btn--light{background:var(--beyaz);color:var(--lacivert)}
+.btn--light:hover{background:var(--acik-mavi);color:var(--koyu-lacivert)}
+.plist--soft li{border-color:rgba(255,255,255,.35)}
+.plist--soft li:last-child{border-color:rgba(255,255,255,.35)}
+.four{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.four li{border-top:4px solid var(--mavi);padding-top:24px}
+.four h3{font-size:24px;text-transform:uppercase;letter-spacing:.08em;color:var(--mavi)}
+.four p{margin:14px 0 0;color:var(--acik-mavi);font-size:17px}
+.tags{list-style:none;margin:40px 0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.tags li{border:2px solid var(--koyu-lacivert);border-radius:999px;padding:9px 20px;font-weight:700;font-size:16px}
 
 /* alt bilgi */
 .foot{background:var(--koyu-lacivert);padding:32px 0;font-size:14px;color:var(--acik-mavi)}
@@ -92,7 +104,7 @@ h3{font-size:26px;line-height:1.15}
 
 /* mobil */
 @media (max-width:860px){
-  .cards,.steps{grid-template-columns:1fr}
+  .cards,.steps,.four{grid-template-columns:1fr}
   .split{grid-template-columns:1fr}
   .nav-toggle{display:block}
   .nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--koyu-lacivert);padding:8px var(--yan) 24px;border-bottom:1px solid rgba(175,225,251,.2)}
