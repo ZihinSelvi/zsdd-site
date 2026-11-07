@@ -159,6 +159,27 @@
     });
   }
 
+
+  /* gizli tanı göstergesi: logoya 5 kez hızlı dokunun ya da adresin sonuna #tani ekleyin */
+  var DBG = { on: false, el: null, fps: 0, f: 0, t0: 0, info: function () { return ''; } };
+  function showDbg() {
+    if (DBG.on) return; DBG.on = true;
+    var el = document.createElement('pre');
+    el.style.cssText = 'position:fixed;left:8px;bottom:8px;z-index:99;margin:0;padding:8px 10px;background:rgba(0,0,0,.82);color:#9ff;font:11px/1.35 monospace;border-radius:8px;max-width:calc(100vw - 16px);white-space:pre-wrap;pointer-events:none';
+    document.body.appendChild(el); DBG.el = el;
+    (function tick(t) {
+      DBG.f++; if (t - DBG.t0 > 1000) { DBG.fps = DBG.f; DBG.f = 0; DBG.t0 = t; }
+      el.textContent = 'ZSDD tanı\nfps ' + DBG.fps + ' | ' + window.innerWidth + 'x' + window.innerHeight + ' dpr ' + window.devicePixelRatio +
+        '\nfine ' + fine + ' | reduce ' + reduce + ' | touchpts ' + navigator.maxTouchPoints + '\n' + DBG.info();
+      requestAnimationFrame(tick);
+    })(0);
+  }
+  if (/tani|debug/.test(location.hash + location.search)) showDbg();
+  (function () {
+    var n = 0, tm; var lg = $('.brand');
+    if (lg) lg.addEventListener('click', function () { n++; clearTimeout(tm); tm = setTimeout(function () { n = 0; }, 1800); if (n >= 5) { n = 0; showDbg(); } });
+  })();
+
   /* dağınık logo halkaları: imleç üzerine gelince parçalar sırayla, kendi halkaları boyunca kayarak yerine oturur */
   (function () {
     var C = { x: 1000, y: 794 }, EMB = 1295, DUR = 2800;
@@ -219,6 +240,8 @@
       }
       var running = false;
       layout(); draw(0);
+      var prevInfo = DBG.info;
+      DBG.info = function () { return prevInfo() + mode + ': vis ' + vis + ' auto ' + auto + ' tgt ' + target + ' a ' + a.toFixed(2) + ' run ' + running + '\n'; };
       function start() { if (running) return; running = true; last = performance.now(); auto0 = last; requestAnimationFrame(loop); }
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (es) {
