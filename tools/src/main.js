@@ -84,8 +84,7 @@
     var place = function (f) {
       var pt = path.getPointAtLength(plen * f), r = psvg.getBoundingClientRect(), hr = psvg.parentNode.getBoundingClientRect();
       var s = Math.max(r.width / 1600, r.height / 200);
-      dot.style.left = (r.left - hr.left + (r.width - 1600 * s) / 2 + pt.x * s) + 'px';
-      dot.style.top = (r.top - hr.top + (r.height - 200 * s) / 2 + pt.y * s) + 'px';
+      dot.style.transform = 'translate(' + (r.left - hr.left + (r.width - 1600 * s) / 2 + pt.x * s).toFixed(1) + 'px,' + (r.top - hr.top + (r.height - 200 * s) / 2 + pt.y * s).toFixed(1) + 'px)';
     };
     var step = function (t) {
       if (!pulseVis) { run = false; elapsedBase += t - startAt; return; }
@@ -273,7 +272,7 @@
         else if (S.phase === 'hidden') fromHidden('assemble');
       }
 
-      layout();
+      layout(); svg.style.visibility = 'visible';
       if (reduce) {                                      /* animasyon yok: sabit, soluk halkalar */
         S.a = 1; S.v = .55; bold = 0; draw(0);
         if (mode === 'hero') { sec.style.setProperty('--lw', '500'); sec.style.setProperty('--lwd', '98'); }
