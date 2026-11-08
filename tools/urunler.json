@@ -347,14 +347,14 @@
   "kat": "Baskı ve branda",
   "sayfa": 50,
   "dosya": "50-raket-baski.webp",
-  "yer_tutucu": false
+  "yer_tutucu": true
  },
  {
   "ad": "Billboard Baskı",
   "kat": "Baskı ve branda",
   "sayfa": 50,
   "dosya": "51-billboard-baski.webp",
-  "yer_tutucu": false
+  "yer_tutucu": true
  },
  {
   "ad": "Laminasyon",

@@ -19,7 +19,7 @@ URUNLER = [
  ("Yelken Bayrak Eko",BY,42,"yt"),("Süsleme Bayrak",BY,43,(.12,.12,.88,.62)),("Ezilmez Taban",B,44,(.57,.02,.96,.27)),
  ("Tören Bayrağı",BY,45,(.39,.12,.615,.58)),("Araç Cam Bayrağı",BY,46,(.03,.20,.50,.46)),("Makam Bayrağı",BY,47,(.18,.22,.86,.63)),
  ("Türk Bayrağı",BY,48,(.03,.12,.67,.53)),("Masa Bayrağı",BY,49,(.04,.20,.36,.52)),
- ("Raket Baskı",BR,50,(.14,.10,.49,.34)),("Billboard Baskı",BR,50,(.49,.51,.84,.74)),
+ ("Raket Baskı",BR,50,"yt"),("Billboard Baskı",BR,50,"yt"),
  ("Laminasyon",BR,51,(.04,.33,1.0,.69)),("Kesim",BR,52,(.04,.22,.82,.50)),("Reflektifli Branda",BR,53,(.10,.19,.44,.50)),
  ("Baskılı Duvar Kağıdı",BR,54,(.46,.35,1.0,.80)),("5 Mt. Baskı",BR,55,"yt"),("Fason Dijital Baskı",BR,56,"yt"),
  ("Metrajlı Satış",BR,57,(.0,.43,.44,.93)),("Canvas Tablo",BR,58,(.64,.17,.95,.50)),
