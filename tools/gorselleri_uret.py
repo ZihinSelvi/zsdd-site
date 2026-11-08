@@ -5,6 +5,8 @@ from PIL import Image, ImageChops, ImageDraw
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from urunler import URUNLER, WHICH
 PDF = sys.argv[1]; OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "images"); os.makedirs(OUT, exist_ok=True)
+for f in os.listdir(OUT):
+    if f.endswith(".webp"): os.remove(os.path.join(OUT,f))
 S = 560
 def slug(s):
     t = str.maketrans("çğıöşüÇĞİÖŞÜ","cgiosuCGIOSU")
@@ -52,13 +54,14 @@ def placeholder():
         d.ellipse((cx-70,S//2-70,cx+70,S//2+70),outline=(175,225,251),width=14)
     return im
 cache, meta = {}, []
-for i,(ad,kat,pg,box) in enumerate(URUNLER,1):
+for i,e in enumerate(URUNLER,1):
+    ad,kat,pg,box = e[:4]; gp = e[4] if len(e)>4 else pg
     fn = f"{i:02d}-{slug(ad)}.webp"; yer = False
     if box == "yt": yer = True; im = placeholder()
     else:
-        if pg not in cache: cache[pg] = page(pg)
-        P = cache[pg]; W,H = P.size
-        crop = auto_crop(P, WHICH.get(pg,"last")) if box is None else P.crop((int(box[0]*W),int(box[1]*H),int(box[2]*W),int(box[3]*H)))
+        if gp not in cache: cache[gp] = page(gp)
+        P = cache[gp]; W,H = P.size
+        crop = auto_crop(P, WHICH.get(gp,"last")) if box is None else P.crop((int(box[0]*W),int(box[1]*H),int(box[2]*W),int(box[3]*H)))
         im = to_square(crop)
         if not border_white(im) and box is not None and False: pass
     im.save(os.path.join(OUT,fn),"WEBP",quality=82,method=6)

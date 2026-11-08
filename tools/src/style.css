@@ -195,7 +195,10 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 /* yaklaşım sütunları */
 .pillars{list-style:none;margin:80px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,5vw,80px)}
 .pillar{--p:0;border-top:2px solid rgba(175,225,251,.35);padding:36px 0 56px}
-.pillar__w{display:block;font-family:var(--display);font-size:clamp(56px,9.5vw,150px);line-height:.95;letter-spacing:-.02em;font-variation-settings:"wght" calc(250 + 650 * var(--p)),"wdth" calc(135 - 60 * var(--p));color:color-mix(in srgb,var(--w) calc(62% + 38% * var(--p)),var(--m));will-change:font-variation-settings}
+.pillar__w{display:block;font-family:var(--display);font-size:clamp(56px,9.5vw,150px);line-height:.95;letter-spacing:-.02em;font-variation-settings:"wght" calc(250 + 650 * var(--p)),"wdth" calc(135 - 60 * var(--p));color:color-mix(in srgb,var(--w) calc(62% + 38% * var(--p)),var(--m));will-change:font-variation-settings;transition:font-variation-settings .35s var(--ease),color .35s}
+.pillar:hover .pillar__w,.pillar:focus-within .pillar__w{font-variation-settings:"wght" 900,"wdth" 75;color:var(--w)}
+#yaklasim .t-thin{transition:font-variation-settings .45s var(--ease)}
+#yaklasim h2:hover .t-thin{font-variation-settings:"wght" 880,"wdth" 78}
 .pillar p{margin:22px 0 0;max-width:26em;color:var(--am)}
 
 /* matbaa ve reklam: "Ek hizmet", Hizmetler'den daha hafif (küçük başlık, beyaz zemin) */

@@ -114,7 +114,7 @@
   var rail = $('#rail'), chips = $$('.chip'), cards = $$('.card'), durum = $('#kat-durum');
   function setKat(k, announce) {
     var n = 0;
-    cards.forEach(function (li) { var on = li.getAttribute('data-kat') === k; li.hidden = !on; if (on) n++; });
+    cards.forEach(function (li) { var on = k === 'Tümü' || li.getAttribute('data-kat') === k; li.hidden = !on; if (on) n++; });
     chips.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-kat') === k)); });
     if (rail) rail.scrollLeft = 0;
     if (announce && durum) durum.textContent = k + ': ' + n + ' ürün';
