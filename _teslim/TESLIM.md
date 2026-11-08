@@ -11,7 +11,7 @@ Kaynak taslak: Artifact "Zihni Selvi Dijital Danışmanlık" (7 Kasım), `_kayna
 | PORTRE_YER_TUTUCU | (çözüldü) | Zihni profil fotoğrafını verdi, `images/zihni-selvi.webp` |
 | BOŞLUK_METNİ | (çözüldü) | "Açıkhava reklam işletmesi (HAYDETAY Reklamcılık Dijital Baskı Hizmetleri) faaliyetleri" |
 | SAAT_YER_TUTUCU | (çözüldü) | "7/24 mesaj bırakabilirsiniz." JSON-LD'de `openingHours` yerine `contactPoint.hoursAvailable` (7/24 mesaj) |
-| YANIT_SÜRESİ_YER_TUTUCU | İletişim bölümü | Zihni |
+| YANIT_SÜRESİ_YER_TUTUCU | (kaldırıldı) | İletişim bölümünden çıkarıldı |
 | ÜNVAN_VERGİ_YER_TUTUCU | (kaldırıldı) | Altbilgi ve gizlilik metninden çıkarıldı |
 | GÖRSEL_YER_TUTUCU (8 ürün) | Rüzgar Tabela, Yelken Bayrak Eko, Raket Baskı, Billboard Baskı, Fener Tabela, 50x70 Ahşap Kasa Ledbox, Ledbox Baskısı, Oval Örümcek Stand | Zihni: kendi ürün fotoğrafı. PDF'teki fotoğraflarda tedarikçi logosu, üçüncü taraf afişi (telefon numarası dahil) ya da renkli zemin vardı |
 
