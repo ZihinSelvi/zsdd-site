@@ -5,14 +5,14 @@ Kaynak taslak: Artifact "Zihni Selvi Dijital Danışmanlık" (7 Kasım), `_kayna
 ## Yer tutucular
 | Yer tutucu | Nerede | Kimden istenecek |
 |---|---|---|
-| LINKEDIN_URL | iletişim, altbilgi, "Zihni Selvi kimdir" düğmesi, JSON-LD `sameAs` | Zihni: doğru profil. Aramada iki "Zihni Selvi" profili çıktı (`/in/zihni-selvi-3a95487a`, `/in/zihni-selvi-89b0a663`), hangisinin sizin olduğunu bilemedim |
+| LINKEDIN_URL | (çözüldü) | Zihni verdi: `linkedin.com/in/zihni-selvi/` |
 | Instagram, Facebook (yer tutucu değil, onay bekliyor) | aynı yerler | Açık aramayla bulundu: `instagram.com/selvizihni/` ("Zihni Selvi | Dijital Danışman"), `facebook.com/zihniselvidijitaldanismanlik/`. Zihni onaylayacak |
 | LOGO_YER_TUTUCU | `logo.svg` (taslaktaki 12 yaydan çizilen şeffaf halka), `logo-512.png`, favicon, `apple-touch-icon.png`; altbilgideki yazılı logo HTML ile kurulu | Zihni: resmî vektör logo (SVG/AI) |
-| PORTRE_YER_TUTUCU | "Zihni Selvi kimdir" bölümü | Zihni: portre fotoğrafı |
-| BOŞLUK_METNİ | Zaman çizelgesi, 2014–2023 kartı | Zihni: tek cümle |
-| SAAT_YER_TUTUCU | İletişim bölümü, JSON-LD `openingHours` | Zihni |
+| PORTRE_YER_TUTUCU | (çözüldü) | Zihni profil fotoğrafını verdi, `images/zihni-selvi.webp` |
+| BOŞLUK_METNİ | (çözüldü) | "Açıkhava reklam işletmesi (HAYDETAY Reklamcılık Dijital Baskı Hizmetleri) faaliyetleri" |
+| SAAT_YER_TUTUCU | (çözüldü) | "7/24 mesaj bırakabilirsiniz." JSON-LD'de `openingHours` yerine `contactPoint.hoursAvailable` (7/24 mesaj) |
 | YANIT_SÜRESİ_YER_TUTUCU | İletişim bölümü | Zihni |
-| ÜNVAN_VERGİ_YER_TUTUCU | Altbilgi, gizlilik.html | Zihni / muhasebe |
+| ÜNVAN_VERGİ_YER_TUTUCU | (kaldırıldı) | Altbilgi ve gizlilik metninden çıkarıldı |
 | GÖRSEL_YER_TUTUCU (8 ürün) | Rüzgar Tabela, Yelken Bayrak Eko, Raket Baskı, Billboard Baskı, Fener Tabela, 50x70 Ahşap Kasa Ledbox, Ledbox Baskısı, Oval Örümcek Stand | Zihni: kendi ürün fotoğrafı. PDF'teki fotoğraflarda tedarikçi logosu, üçüncü taraf afişi (telefon numarası dahil) ya da renkli zemin vardı |
 
 ## Kontrast (WCAG)

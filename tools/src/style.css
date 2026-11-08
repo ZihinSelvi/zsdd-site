@@ -152,7 +152,7 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 .ticks li::after{content:"";position:absolute;left:8px;top:.34em;width:7px;height:12px;border:solid var(--kl);border-width:0 2.4px 2.4px 0;transform:rotate(40deg)}
 .phonewrap{justify-self:center;width:min(100%,360px)}
 .phone__cap{margin:0 0 16px;font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--am);text-align:center}
-.phone{background:var(--w);color:var(--kl);border-radius:38px;padding:12px;box-shadow:0 40px 90px rgba(3,50,96,.55);transform:rotate(2deg)}
+.phone{background:var(--w);color:var(--kl);border-radius:38px;padding:12px;box-shadow:0 40px 90px rgba(3,50,96,.55)}
 .phone__bar{display:flex;align-items:center;gap:12px;background:var(--kl);color:var(--w);border-radius:28px 28px 8px 8px;padding:14px 18px}
 .phone__bar i{width:34px;height:34px;border-radius:50%;background:var(--am);flex:none}
 .phone__bar b{font-weight:700;font-size:16px}
@@ -182,7 +182,8 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 
 /* Zihni Selvi kimdir */
 .about{display:grid;grid-template-columns:minmax(220px,.62fr) 1.4fr;gap:clamp(36px,6vw,96px);align-items:start;margin-top:56px}
-.portrait{margin:0;aspect-ratio:4/5;border:3px dashed var(--l);border-radius:24px;display:grid;place-items:center;text-align:center;padding:20px;font-weight:700;letter-spacing:.08em;color:var(--l);background:rgba(255,255,255,.35)}
+.portrait{margin:0;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--kl)}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover}
 .about__t p{margin:0 0 18px;max-width:34em;font-size:clamp(18px,1.6vw,21px)}
 .about__t .btn{margin-top:14px}
 .timeline{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -195,8 +196,8 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 /* yaklaşım sütunları */
 .pillars{list-style:none;margin:80px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,5vw,80px)}
 .pillar{--p:0;border-top:2px solid rgba(175,225,251,.35);padding:36px 0 56px}
-.pillar__w{display:block;font-family:var(--display);font-size:clamp(56px,9.5vw,150px);line-height:.95;letter-spacing:-.02em;font-variation-settings:"wght" calc(250 + 650 * var(--p)),"wdth" calc(135 - 60 * var(--p));color:color-mix(in srgb,var(--w) calc(62% + 38% * var(--p)),var(--m));will-change:font-variation-settings;transition:font-variation-settings .35s var(--ease),color .35s}
-.pillar:hover .pillar__w,.pillar:focus-within .pillar__w{font-variation-settings:"wght" 900,"wdth" 75;color:var(--w)}
+.pillar__w{display:block;font-family:var(--display);font-size:clamp(56px,9.5vw,150px);line-height:.95;letter-spacing:-.02em;font-variation-settings:"wght" calc(250 + 330 * var(--p)),"wdth" calc(135 - 60 * var(--p));color:color-mix(in srgb,var(--w) calc(62% + 38% * var(--p)),var(--m));will-change:font-variation-settings;transition:font-variation-settings .35s var(--ease),color .35s}
+.pillar:hover .pillar__w,.pillar:active .pillar__w,.pillar:focus-within .pillar__w{font-variation-settings:"wght" 900,"wdth" 75;color:var(--w)}
 #yaklasim .t-thin{transition:font-variation-settings .45s var(--ease)}
 #yaklasim h2:hover .t-thin{font-variation-settings:"wght" 880,"wdth" 78}
 .pillar p{margin:22px 0 0;max-width:26em;color:var(--am)}

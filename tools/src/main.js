@@ -68,7 +68,7 @@
       var r = el.getBoundingClientRect(), c = r.top + Math.min(r.height, 220) / 2;
       var p = 1 - Math.abs(c - vh * 0.55) / (vh * 0.42);
       p = Math.max(0, Math.min(1, p));
-      el.style.setProperty('--p', reduce ? 1 : p.toFixed(3));
+      el.style.setProperty('--p', reduce ? 0 : p.toFixed(3));
     });
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
@@ -79,10 +79,10 @@
   var path = $('#pulsePath'), psvg = path && path.ownerSVGElement;
   if (path && psvg) {
     var dot = document.createElement('i'); dot.className = 'pulse__dot'; psvg.parentNode.appendChild(dot);
-    var run = false, elapsedBase = 0, startAt = 0;
+    var plen = path.getTotalLength(), run = false, elapsedBase = 0, startAt = 0;
     var pulseVis = true;
     var place = function (f) {
-      var pt = path.getPointAtLength(path.getTotalLength() * f), r = psvg.getBoundingClientRect(), hr = psvg.parentNode.getBoundingClientRect();
+      var pt = path.getPointAtLength(plen * f), r = psvg.getBoundingClientRect(), hr = psvg.parentNode.getBoundingClientRect();
       var s = Math.max(r.width / 1600, r.height / 200);
       dot.style.left = (r.left - hr.left + (r.width - 1600 * s) / 2 + pt.x * s) + 'px';
       dot.style.top = (r.top - hr.top + (r.height - 200 * s) / 2 + pt.y * s) + 'px';
@@ -91,10 +91,11 @@
       if (!pulseVis) { run = false; elapsedBase += t - startAt; return; }
       var e = (elapsedBase + (t - startAt)) / 1000;
       if (reduce) { path.style.strokeDashoffset = 0; place(0.5); dot.style.opacity = 1; run = false; return; }
-      if (e < 2.6) { var f = 1 - Math.pow(1 - e / 2.6, 3); path.style.strokeDashoffset = 1 - f; dot.style.opacity = 1; place(f); }
+      if (e < 2.6) { var f = 1 - Math.pow(1 - e / 2.6, 3); path.style.strokeDashoffset = plen * (1 - f); dot.style.opacity = 1; place(f); }
       else { path.style.strokeDashoffset = 0; place(((e - 2.6) % 6) / 6); dot.style.opacity = 1; }
       requestAnimationFrame(step);
     };
+    path.style.strokeDasharray = plen; path.style.strokeDashoffset = plen;
     var startPulse = function () { if (run) return; run = true; startAt = performance.now(); requestAnimationFrame(step); };
     setTimeout(startPulse, 500);
     if (hasIO && hero) {
@@ -189,7 +190,7 @@
           d: layer * .24 + grp * .12 + rnd(i + 31) * .08, ph: rnd(i + 61) * 6.28, sp: .5 + rnd(i + 71) * .6 };
       });
       var k = 1, L = 0, T = 0;
-      var auto = !fine, vis = false, running = false, last = 0, pausedAt = 0, timer = 0;
+      var auto = !fine, demo = false, vis = false, running = false, last = 0, pausedAt = 0, timer = 0;
       /* durum: idle (dağınık, bekler) → assemble → hold → fade → hidden (rAF durur)   [fadein: hidden'dan dönüş] */
       var S = { phase: 'idle', t0: 0, a: 0, v: 1, next: 'assemble' };
 
@@ -283,6 +284,7 @@
       if (hasIO) {
         new IntersectionObserver(function (es) {
           vis = es[0].isIntersecting;
+          if (vis && fine && !demo) { demo = true; setTimeout(function () { if (S.phase === 'idle') trigger(); }, mode === 'hero' ? 2200 : 1200); }
           if (vis) { layout(); if (S.phase !== 'hidden') { if (S.phase === 'idle' && !S.t0) S.t0 = performance.now(); start(); } }
         }, { threshold: .1 }).observe(sec);
       } else { vis = true; S.t0 = performance.now(); start(); }

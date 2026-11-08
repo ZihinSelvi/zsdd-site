@@ -16,6 +16,7 @@ if arcs is None:
     src = open(os.path.join(R,"_kaynak","ZSDD-site-onizleme.html"),encoding="utf8").read()
     m = re.search(r'<svg class="asm" viewBox="0 0 2000 2000".*?<g[^>]*>(.*?)</g>', src, re.S)
     arcs = m.group(1).strip("\n")
+LINKEDIN = "https://www.linkedin.com/in/zihni-selvi/"
 INSTAGRAM = "https://www.instagram.com/selvizihni/"
 FACEBOOK = "https://www.facebook.com/zihniselvidijitaldanismanlik/"
 def icon(ad, url, svg):
@@ -25,7 +26,7 @@ SV = {
  "Instagram": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>',
  "Facebook": '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8.5V7c0-.8.5-1 1-1h2V3h-3c-3 0-4 2-4 4v1.5H8V12h2v9h4v-9h2.6l.4-3.5z"/></svg>',
 }
-SOSYAL = '<ul class="social" aria-label="Sosyal medya">' + "".join(icon(a,u,SV[a]) for a,u in (("LinkedIn","LINKEDIN_URL"),("Instagram",INSTAGRAM),("Facebook",FACEBOOK))) + '</ul>'
+SOSYAL = '<ul class="social" aria-label="Sosyal medya">' + "".join(icon(a,u,SV[a]) for a,u in (("LinkedIn",LINKEDIN),("Instagram",INSTAGRAM),("Facebook",FACEBOOK))) + '</ul>'
 kats = []
 for p in URUN:
     if p["kat"] not in kats: kats.append(p["kat"])
