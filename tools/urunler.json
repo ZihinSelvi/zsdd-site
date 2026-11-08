@@ -1,0 +1,506 @@
+[
+ {
+  "ad": "Küçük Duba",
+  "kat": "Duba",
+  "sayfa": 1,
+  "dosya": "01-kucuk-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Büyük Duba",
+  "kat": "Duba",
+  "sayfa": 2,
+  "dosya": "02-buyuk-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Uzun Büyük Duba",
+  "kat": "Duba",
+  "sayfa": 3,
+  "dosya": "03-uzun-buyuk-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "A Tabela",
+  "kat": "Tabela ve pano",
+  "sayfa": 4,
+  "dosya": "04-a-tabela.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Raket Duba",
+  "kat": "Duba",
+  "sayfa": 5,
+  "dosya": "05-raket-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Şirin Tabela",
+  "kat": "Tabela ve pano",
+  "sayfa": 6,
+  "dosya": "06-sirin-tabela.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Jumbo Duba",
+  "kat": "Duba",
+  "sayfa": 7,
+  "dosya": "07-jumbo-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Uzun Jumbo Duba",
+  "kat": "Duba",
+  "sayfa": 8,
+  "dosya": "08-uzun-jumbo-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Uzun Küçük Duba",
+  "kat": "Duba",
+  "sayfa": 9,
+  "dosya": "09-uzun-kucuk-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Uzun Raket Duba",
+  "kat": "Duba",
+  "sayfa": 10,
+  "dosya": "10-uzun-raket-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Aç Kapa Tabela",
+  "kat": "Tabela ve pano",
+  "sayfa": 11,
+  "dosya": "11-ac-kapa-tabela.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Dikme Duba",
+  "kat": "Duba",
+  "sayfa": 12,
+  "dosya": "12-dikme-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Küçük Başlıklı Dikme Duba",
+  "kat": "Duba",
+  "sayfa": 13,
+  "dosya": "13-kucuk-baslikli-dikme-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Raket Başlıklı Dikme Duba",
+  "kat": "Duba",
+  "sayfa": 14,
+  "dosya": "14-raket-baslikli-dikme-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Ok Duba",
+  "kat": "Duba",
+  "sayfa": 15,
+  "dosya": "15-ok-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Uzun Ok Duba",
+  "kat": "Duba",
+  "sayfa": 16,
+  "dosya": "16-uzun-ok-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Hacıyatmaz Duba Küçük Başlıklı",
+  "kat": "Duba",
+  "sayfa": 17,
+  "dosya": "17-haciyatmaz-duba-kucuk-baslikli.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Hacıyatmaz Duba Raket Başlıklı",
+  "kat": "Duba",
+  "sayfa": 18,
+  "dosya": "18-haciyatmaz-duba-raket-baslikli.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Hacıyatmaz Duba Büyük Başlıklı",
+  "kat": "Duba",
+  "sayfa": 19,
+  "dosya": "19-haciyatmaz-duba-buyuk-baslikli.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Kaygan Zemin",
+  "kat": "Diğer",
+  "sayfa": 20,
+  "dosya": "20-kaygan-zemin.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Fırfır",
+  "kat": "Diğer",
+  "sayfa": 21,
+  "dosya": "21-firfir.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Vale Duba",
+  "kat": "Duba",
+  "sayfa": 22,
+  "dosya": "22-vale-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Zincir",
+  "kat": "Bariyer ve koni",
+  "sayfa": 23,
+  "dosya": "23-zincir.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Bariyer Duba",
+  "kat": "Bariyer ve koni",
+  "sayfa": 24,
+  "dosya": "24-bariyer-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Bariyer Duba Küçük Başlıklı",
+  "kat": "Bariyer ve koni",
+  "sayfa": 25,
+  "dosya": "25-bariyer-duba-kucuk-baslikli.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Bariyer Duba Raket Başlıklı",
+  "kat": "Bariyer ve koni",
+  "sayfa": 26,
+  "dosya": "26-bariyer-duba-raket-baslikli.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Uzun Bariyer Duba",
+  "kat": "Bariyer ve koni",
+  "sayfa": 27,
+  "dosya": "27-uzun-bariyer-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Rüzgar Tabela",
+  "kat": "Tabela ve pano",
+  "sayfa": 28,
+  "dosya": "28-ruzgar-tabela.webp",
+  "yer_tutucu": true
+ },
+ {
+  "ad": "Yaylı Rüzgar Pano",
+  "kat": "Tabela ve pano",
+  "sayfa": 29,
+  "dosya": "29-yayli-ruzgar-pano.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Alüminyum A Pano",
+  "kat": "Tabela ve pano",
+  "sayfa": 30,
+  "dosya": "30-aluminyum-a-pano.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Yer Tipi Poster Pano",
+  "kat": "Tabela ve pano",
+  "sayfa": 31,
+  "dosya": "31-yer-tipi-poster-pano.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Uzun Yer Tipi Poster Pano",
+  "kat": "Tabela ve pano",
+  "sayfa": 32,
+  "dosya": "32-uzun-yer-tipi-poster-pano.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Çerçeveler",
+  "kat": "Tabela ve pano",
+  "sayfa": 33,
+  "dosya": "33-cerceveler.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Roll Up",
+  "kat": "Banner ve stand",
+  "sayfa": 34,
+  "dosya": "34-roll-up.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "X Banner Ayarlanabilir",
+  "kat": "Banner ve stand",
+  "sayfa": 35,
+  "dosya": "35-x-banner-ayarlanabilir.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Tanıtım Standı",
+  "kat": "Banner ve stand",
+  "sayfa": 36,
+  "dosya": "36-tanitim-standi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Araç Magneti",
+  "kat": "Baskı ve branda",
+  "sayfa": 37,
+  "dosya": "37-arac-magneti.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Metal Bariyer",
+  "kat": "Bariyer ve koni",
+  "sayfa": 38,
+  "dosya": "38-metal-bariyer.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Şerit Bariyer",
+  "kat": "Bariyer ve koni",
+  "sayfa": 39,
+  "dosya": "39-serit-bariyer.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Delinatör",
+  "kat": "Bariyer ve koni",
+  "sayfa": 40,
+  "dosya": "40-delinator.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Trafik Konisi",
+  "kat": "Bariyer ve koni",
+  "sayfa": 41,
+  "dosya": "41-trafik-konisi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Yelken Bayrak Eko",
+  "kat": "Bayrak",
+  "sayfa": 42,
+  "dosya": "42-yelken-bayrak-eko.webp",
+  "yer_tutucu": true
+ },
+ {
+  "ad": "Süsleme Bayrak",
+  "kat": "Bayrak",
+  "sayfa": 43,
+  "dosya": "43-susleme-bayrak.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Ezilmez Taban",
+  "kat": "Bariyer ve koni",
+  "sayfa": 44,
+  "dosya": "44-ezilmez-taban.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Tören Bayrağı",
+  "kat": "Bayrak",
+  "sayfa": 45,
+  "dosya": "45-toren-bayragi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Araç Cam Bayrağı",
+  "kat": "Bayrak",
+  "sayfa": 46,
+  "dosya": "46-arac-cam-bayragi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Makam Bayrağı",
+  "kat": "Bayrak",
+  "sayfa": 47,
+  "dosya": "47-makam-bayragi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Türk Bayrağı",
+  "kat": "Bayrak",
+  "sayfa": 48,
+  "dosya": "48-turk-bayragi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Masa Bayrağı",
+  "kat": "Bayrak",
+  "sayfa": 49,
+  "dosya": "49-masa-bayragi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Raket Baskı",
+  "kat": "Baskı ve branda",
+  "sayfa": 50,
+  "dosya": "50-raket-baski.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Billboard Baskı",
+  "kat": "Baskı ve branda",
+  "sayfa": 50,
+  "dosya": "51-billboard-baski.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Laminasyon",
+  "kat": "Baskı ve branda",
+  "sayfa": 51,
+  "dosya": "52-laminasyon.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Kesim",
+  "kat": "Baskı ve branda",
+  "sayfa": 52,
+  "dosya": "53-kesim.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Reflektifli Branda",
+  "kat": "Baskı ve branda",
+  "sayfa": 53,
+  "dosya": "54-reflektifli-branda.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Baskılı Duvar Kağıdı",
+  "kat": "Baskı ve branda",
+  "sayfa": 54,
+  "dosya": "55-baskili-duvar-kagidi.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "5 Mt. Baskı",
+  "kat": "Baskı ve branda",
+  "sayfa": 55,
+  "dosya": "56-5-mt-baski.webp",
+  "yer_tutucu": true
+ },
+ {
+  "ad": "Fason Dijital Baskı",
+  "kat": "Baskı ve branda",
+  "sayfa": 56,
+  "dosya": "57-fason-dijital-baski.webp",
+  "yer_tutucu": true
+ },
+ {
+  "ad": "Metrajlı Satış",
+  "kat": "Baskı ve branda",
+  "sayfa": 57,
+  "dosya": "58-metrajli-satis.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Canvas Tablo",
+  "kat": "Baskı ve branda",
+  "sayfa": 58,
+  "dosya": "59-canvas-tablo.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Dekota",
+  "kat": "Baskı ve branda",
+  "sayfa": 59,
+  "dosya": "60-dekota.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Kompozit",
+  "kat": "Baskı ve branda",
+  "sayfa": 59,
+  "dosya": "61-kompozit.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Windpro Işıklı Ledli",
+  "kat": "Tabela ve pano",
+  "sayfa": 60,
+  "dosya": "62-windpro-isikli-ledli.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Fener Tabela",
+  "kat": "Tabela ve pano",
+  "sayfa": 61,
+  "dosya": "63-fener-tabela.webp",
+  "yer_tutucu": true
+ },
+ {
+  "ad": "Ledbox Baskısı",
+  "kat": "Baskı ve branda",
+  "sayfa": 63,
+  "dosya": "64-ledbox-baskisi.webp",
+  "yer_tutucu": true
+ },
+ {
+  "ad": "Buy Max Ledbox",
+  "kat": "Tabela ve pano",
+  "sayfa": 64,
+  "dosya": "65-buy-max-ledbox.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Master Sign Board Duba",
+  "kat": "Duba",
+  "sayfa": 65,
+  "dosya": "66-master-sign-board-duba.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Menü Panosu",
+  "kat": "Tabela ve pano",
+  "sayfa": 66,
+  "dosya": "67-menu-panosu.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Wind Pro",
+  "kat": "Tabela ve pano",
+  "sayfa": 67,
+  "dosya": "68-wind-pro.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Zigzag Broşürlük",
+  "kat": "Banner ve stand",
+  "sayfa": 68,
+  "dosya": "69-zigzag-brosurluk.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Oval Örümcek Stand",
+  "kat": "Banner ve stand",
+  "sayfa": 69,
+  "dosya": "70-oval-orumcek-stand.webp",
+  "yer_tutucu": true
+ },
+ {
+  "ad": "Hazır Tabela",
+  "kat": "Tabela ve pano",
+  "sayfa": 71,
+  "dosya": "71-hazir-tabela.webp",
+  "yer_tutucu": false
+ },
+ {
+  "ad": "Maket Döner",
+  "kat": "Tabela ve pano",
+  "sayfa": 72,
+  "dosya": "72-maket-doner.webp",
+  "yer_tutucu": false
+ }
+]
