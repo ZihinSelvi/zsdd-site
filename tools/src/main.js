@@ -68,7 +68,12 @@
       var r = el.getBoundingClientRect(), c = r.top + Math.min(r.height, 220) / 2;
       var p = 1 - Math.abs(c - vh * 0.55) / (vh * 0.42);
       p = Math.max(0, Math.min(1, p));
-      el.style.setProperty('--p', reduce ? 0 : p.toFixed(3));
+      var pv = reduce ? 0 : p, w = el.firstElementChild;
+      el.style.setProperty('--p', pv.toFixed(3));
+      /* tarayıcı farklarına karşı: ağırlık, genişlik ve rengi doğrudan yaz */
+      w.style.fontVariationSettings = '"wght" ' + Math.round(250 + 650 * pv) + ', "wdth" ' + Math.round(135 - 60 * pv);
+      var k = (62 + 38 * pv) / 100;   /* beyaz ile #139ed5 karışımı */
+      w.style.color = 'rgb(' + Math.round(255 * k + 19 * (1 - k)) + ',' + Math.round(255 * k + 158 * (1 - k)) + ',' + Math.round(255 * k + 213 * (1 - k)) + ')';
     });
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
