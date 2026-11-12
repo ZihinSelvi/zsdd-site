@@ -183,8 +183,8 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 
 /* Zihni Selvi kimdir */
 .about{display:grid;grid-template-columns:minmax(220px,.62fr) 1.4fr;gap:clamp(36px,6vw,96px);align-items:start;margin-top:56px}
-.portrait{margin:0;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--kl)}
-.portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.portrait{display:block;margin:0;aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:#139ed5;box-shadow:0 12px 32px rgba(3,50,96,.18)}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .about__t p{margin:0 0 18px;max-width:34em;font-size:clamp(18px,1.6vw,21px)}
 .about__t .btn{margin-top:14px}
 .timeline{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -247,7 +247,7 @@ h2{font-size:clamp(40px,7.4vw,112px);letter-spacing:-.025em;text-wrap:balance}
 @media (max-width:900px){
   .split,.about{grid-template-columns:1fr}
   .pillars,.contact,.timeline,.steps{grid-template-columns:1fr}
-  .portrait{max-width:320px}
+  .portrait{max-width:260px;margin:0 auto}
   .row{grid-template-columns:1fr 64px;padding:34px 0}
   .row p{grid-column:1 / 2}
   .row__a{grid-row:1;grid-column:2}
