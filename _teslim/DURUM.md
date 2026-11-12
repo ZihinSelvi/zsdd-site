@@ -46,3 +46,8 @@ Dal: `claude/confident-ritchie-vjbrlq` (PR açılmadı). Canlı alan adı: zihni
 - Yayın öncesi açık: gizlilik metninin hukuki incelemesi.
 - Diğer repo: `ZihinSelvi/sosyal-medya` içinde `claude/laughing-maxwell-j1j7ky` dalındaki 400'lük portre dosyaları hâlâ `main`'e alınmadı (siteyi etkilemez).
 - Askıdaki: Ek hizmet (ürün yelpazesi) geri getirilecekse `tools/urunler.json` ve git geçmişindeki bölüm kullanılır; görsel yer tutucular ve adlandırma kararları açık.
+
+## 12 Kasım 2026, ek karar ve değişiklikler
+- **Ek hizmet geri gelmeyecek** (Zihni kararı). `images/` (92 ürün görseli), `tools/urunler.json`, `tools/urunler.py`, `tools/gorselleri_uret.py` silindi. "Ek hizmet geri gelirse" ve "görsel yer tutucular" maddeleri geçersiz.
+- **Tedarikçi konusu kapandı** (Zihni: sitede yok, unut). Yukarıdaki "dalı olduğu gibi main'e birleştirme" uyarısı artık zorunlu değil; istenirse kaldırılır.
+- **Gizlilik metni** (`gizlilik.html`) çok küçük işletmeye uygun, KVKK m.10 unsurlarını (veri sorumlusu, veri/yöntem/amaç/hukuki sebep, saklama süresi 2 yıl, aktarım ve yurt dışı, haklar, başvuru ve 30 gün yanıt, Kurul'a şikâyet) kapsayacak biçimde yeniden yazıldı. Avukat incelemesi yapılmadı (Zihni: zaman ve bütçe yok); metin hukuki görüş yerine geçmez. Saklama süresi (2 yıl) Zihni'ye soruldu mu: **hayır, varsayılan olarak yazıldı**; değiştirilmek istenirse `gizlilik.html` "Saklama süresi" satırı.

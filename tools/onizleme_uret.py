@@ -8,7 +8,6 @@ assert n==4 and '../fonts' not in css, n
 js=open('js/main.js',encoding='utf8').read(); h=re.sub(r'<link rel="preload"[^>]*>\n','',h)
 h=h.replace('<link rel="stylesheet" href="css/style.css">','<style>'+css+'</style>').replace('<script src="js/main.js" defer></script>','<script>'+js+'</script>')
 h=h.replace('src="logo.svg"','src="'+b64('logo.svg','image/svg+xml')+'"')
-h=re.sub(r'src="images/([^"]+)"', lambda m: 'src="'+b64('images/'+m.group(1),'image/webp')+'"', h)
 def _img(m):
     f=m.group(1); mime='image/webp' if f.endswith('.webp') else 'image/jpeg'
     return b64('assets/img/'+f,mime)
