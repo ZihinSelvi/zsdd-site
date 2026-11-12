@@ -14,17 +14,16 @@ Kalan iş (Cloudflare DNS, hepsi "DNS only" / gri bulut):
 4. Settings → Pages → "Check again", sonra "Enforce HTTPS"i işaretle.
 5. Canlı kontrol: telefonda aç, `www` yönlendirmesi, paylaşım önizlemesi (LinkedIn Post Inspector).
 
-Yayın öncesi açık: gizlilik metninin (`gizlilik.html`) hukuki incelemesi.
+Gizlilik metni (`gizlilik.html`) küçük işletmeye uygun, KVKK m.10 unsurlarını içeren sade bir metindir; avukat incelemesi yapılmadı, hukuki görüş yerine geçmez.
 
 ## Dosyalar
 
-- Yayın dosyaları: `index.html`, `gizlilik.html`, `404.html`, `css/`, `js/`, `fonts/`, `images/`, `assets/img/` (portre), `logo.svg`, `og-image.png`, `robots.txt`, `sitemap.xml`, `CNAME`.
+- Yayın dosyaları: `index.html`, `gizlilik.html`, `404.html`, `css/`, `js/`, `fonts/`, `assets/img/` (portre), `logo.svg`, `og-image.png`, `robots.txt`, `sitemap.xml`, `CNAME`.
 - Kaynaklar ve üretim betikleri: `tools/`. `tools/src/` altında okunur CSS/JS; `sh tools/derle.sh` bunları küçültür ve `index.html`i üretir. Tek dosyalık önizleme için `python3 -I tools/onizleme_uret.py`.
 - `_kaynak/` Jekyll tarafından yayına alınmaz (alt çizgi ile başlar).
 
 ## Kararlar
 
 - Mobilde üst çubuk sabittir (kaydırırken gizlenmez). Menü zemini `.top::before` katmanındadır: `.top` üzerine `backdrop-filter` konursa `position:fixed` mobil menü 84 px'lik çubuğa hapsolur.
-- "Ek hizmet" (matbaa ve reklam ürün rayı) şimdilik kaldırıldı; ürün verisi `tools/urunler.json` ve `images/` içinde duruyor, bölüm git geçmişinden geri alınabilir.
+- "Ek hizmet" (matbaa ve reklam ürün rayı) kaldırıldı ve geri gelmeyecek.
 - Tek kişi fotoğrafı `assets/img/` altındaki onaylı kare portredir; yalnızca "Zihni Selvi kimdir?" bölümünde kullanılır. Paylaşım görseli (`og:image`) 1200×630 `og-image.png` kalır (kare görsel önizlemede kırpılır).
-- Tedarikçi adı, logosu, telefonu, fiyatı ve iskontosu sitede ve bu depoda yer almaz.
