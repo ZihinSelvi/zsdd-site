@@ -1,10 +1,30 @@
 # zsdd-site
 
-Zihni Selvi Dijital Danışmanlık internet sitesi (statik, GitHub Pages, alan adı: zihniselvidijitaldanismanlik.com).
+Zihni Selvi Dijital Danışmanlık internet sitesi (statik HTML/CSS/JS, GitHub Pages). Alan adı: `zihniselvidijitaldanismanlik.com`.
 
-- Yayın dosyaları: `index.html`, `gizlilik.html`, `404.html`, `css/`, `js/`, `fonts/`, `images/`, `logo.svg`, `og-image.png`, `robots.txt`, `sitemap.xml`, `CNAME`.
-- Okunur kaynaklar ve üretim betikleri: `tools/` (`tools/src/` altında kaynak CSS/JS; `sh tools/derle.sh` küçültür ve `index.html`i üretir).
-- `_kaynak/` ve `_teslim/` Jekyll tarafından yayına alınmaz (alt çizgi ile başlar). `_kaynak/` içindeki tedarikçi PDF'i fiyat ve iletişim bilgisi içerir; **yayın dalına taşımadan önce depodan çıkarın.**
-- Yer tutucular (gerçek değerle değiştirilecek): `LINKEDIN_URL`, `INSTAGRAM_URL`, `FACEBOOK_URL`, `LOGO_YER_TUTUCU`, `PORTRE_YER_TUTUCU`, `BOŞLUK_METNİ`, `SAAT_YER_TUTUCU`, `YANIT_SÜRESİ_YER_TUTUCU`, `ÜNVAN_VERGİ_YER_TUTUCU`, `GÖRSEL_YER_TUTUCU`. Ayrıntı: `_teslim/TESLIM.md`.
+## Durum (12 Kasım 2026)
 
-Proje durumu, açık kararlar ve sıradaki işler: `_teslim/DURUM.md`. Teslim ayrıntıları: `_teslim/TESLIM.md`, ürün listesi: `_teslim/URUN-TABLOSU.md`.
+**İçerik ve tasarım tamam. GitHub Pages açık, ama site henüz canlı değil: alan adının DNS kayıtları eklenmedi.**
+
+Kalan iş (Cloudflare DNS, hepsi "DNS only" / gri bulut):
+
+1. `@` için dört A kaydı: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`. Eski A/AAAA kaydı varsa sil.
+2. `www` için CNAME → `zihinselvi.github.io`.
+3. GitHub alan adı doğrulaması (Settings → Pages → Verified domains) TXT kaydı isterse onu da ekle.
+4. Settings → Pages → "Check again", sonra "Enforce HTTPS"i işaretle.
+5. Canlı kontrol: telefonda aç, `www` yönlendirmesi, paylaşım önizlemesi (LinkedIn Post Inspector).
+
+Yayın öncesi açık: gizlilik metninin (`gizlilik.html`) hukuki incelemesi.
+
+## Dosyalar
+
+- Yayın dosyaları: `index.html`, `gizlilik.html`, `404.html`, `css/`, `js/`, `fonts/`, `images/`, `assets/img/` (portre), `logo.svg`, `og-image.png`, `robots.txt`, `sitemap.xml`, `CNAME`.
+- Kaynaklar ve üretim betikleri: `tools/`. `tools/src/` altında okunur CSS/JS; `sh tools/derle.sh` bunları küçültür ve `index.html`i üretir. Tek dosyalık önizleme için `python3 -I tools/onizleme_uret.py`.
+- `_kaynak/` Jekyll tarafından yayına alınmaz (alt çizgi ile başlar).
+
+## Kararlar
+
+- Mobilde üst çubuk sabittir (kaydırırken gizlenmez). Menü zemini `.top::before` katmanındadır: `.top` üzerine `backdrop-filter` konursa `position:fixed` mobil menü 84 px'lik çubuğa hapsolur.
+- "Ek hizmet" (matbaa ve reklam ürün rayı) şimdilik kaldırıldı; ürün verisi `tools/urunler.json` ve `images/` içinde duruyor, bölüm git geçmişinden geri alınabilir.
+- Tek kişi fotoğrafı `assets/img/` altındaki onaylı kare portredir; yalnızca "Zihni Selvi kimdir?" bölümünde kullanılır. Paylaşım görseli (`og:image`) 1200×630 `og-image.png` kalır (kare görsel önizlemede kırpılır).
+- Tedarikçi adı, logosu, telefonu, fiyatı ve iskontosu sitede ve bu depoda yer almaz.
