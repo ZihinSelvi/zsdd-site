@@ -31,3 +31,18 @@ Dal: `claude/confident-ritchie-vjbrlq` (PR açılmadı). Canlı alan adı: zihni
 - **Ek hizmet (Matbaa ve reklam / ürün rayı) şimdilik kaldırıldı**: bölüm, menü bağlantısı, ilgili CSS/JS ve `site_uret.py` kısmı. `tools/urunler.json`, `tools/urunler.py`, `images/` ve ürün görselleri geri dönüş için duruyor; bölümün eski hâli git geçmişinde (`tools/index.template.html`).
 - Bu yüzden "Yarına kalan" listesindeki ürün yelpazesi maddeleri (görsel yer tutucular, adlandırma) şimdilik askıda.
 - Portre: "Zihni Selvi kimdir?" bölümüne onaylı kare portre (`assets/img/`, webp + jpg yedek, `<picture>`) kondu; eski `images/zihni-selvi.webp` silindi. Kare portre JSON-LD `Person` kaydına eklendi. `og:image` bilerek 1200×630 `og-image.png` kaldı (kare görsel paylaşım önizlemesinde kırpılır). 375 px ve 1440 px'te yüz kırpılmıyor.
+
+## 12 Kasım 2026 oturum sonu: yayın durumu
+**Site henüz canlı değil.** Kalan tek iş DNS.
+- `main`'e temiz sürüm gönderildi (tedarikçi PDF'i, `_teslim/`, eski profil fotoğrafı ve `URUN-ENVANTERI.md` içermez). **Bu dalı olduğu gibi `main`'e birleştirme**: bu dosyalar herkese açık geçmişe girer. Yeni iş gerekirse dosyaları `main`'e seçerek taşı (aynı yöntem: `main` üzerine yeni commit, ağaç = dal ağacı eksi bu yollar).
+- GitHub Pages **açıldı**: Settings → Pages → `main` / `(root)`. Custom domain `zihniselvidijitaldanismanlik.com` kayıtlı, durum "DNS check unsuccessful (NotServedByPagesError)" çünkü A kayıtları yok. "Enforce HTTPS" DNS çözülünce açılır.
+- **Cloudflare DNS henüz eklenmedi**: 12 Kasım akşamı Cloudflare paneli "temporarily unavailable" verdi. Eklenecekler (hepsi gri bulut / DNS only):
+  - A, `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+  - CNAME, `www` → `zihinselvi.github.io` (GitHub kullanıcı adı `zihinselvi`, alan adı `zihniselvi...`: yazım farkına dikkat)
+  - GitHub alan adı doğrulaması (Settings → Pages → Verified domains) istenirse çıkan TXT kaydı da eklenir.
+  - `@` için eski A/AAAA kaydı varsa sil.
+- DNS sonrası kontrol: Pages sayfasında "Check again" → "Enforce HTTPS" işaretle → telefonda aç, paylaşım önizlemesi (LinkedIn Post Inspector), `www` yönlendirmesi, Lighthouse.
+- Claude oturumunun ağ izni (Default ortam) `zihniselvidijitaldanismanlik.com`, `www` ve `zihinselvi.github.io` için açıldı; canlı kontrol bu oturumdan yapılabilir.
+- Yayın öncesi açık: gizlilik metninin hukuki incelemesi.
+- Diğer repo: `ZihinSelvi/sosyal-medya` içinde `claude/laughing-maxwell-j1j7ky` dalındaki 400'lük portre dosyaları hâlâ `main`'e alınmadı (siteyi etkilemez).
+- Askıdaki: Ek hizmet (ürün yelpazesi) geri getirilecekse `tools/urunler.json` ve git geçmişindeki bölüm kullanılır; görsel yer tutucular ve adlandırma kararları açık.
