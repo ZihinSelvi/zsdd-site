@@ -51,3 +51,9 @@ Dal: `claude/confident-ritchie-vjbrlq` (PR açılmadı). Canlı alan adı: zihni
 - **Ek hizmet geri gelmeyecek** (Zihni kararı). `images/` (92 ürün görseli), `tools/urunler.json`, `tools/urunler.py`, `tools/gorselleri_uret.py` silindi. "Ek hizmet geri gelirse" ve "görsel yer tutucular" maddeleri geçersiz.
 - **Tedarikçi konusu kapandı** (Zihni: sitede yok, unut). Yukarıdaki "dalı olduğu gibi main'e birleştirme" uyarısı artık zorunlu değil; istenirse kaldırılır.
 - **Gizlilik metni** (`gizlilik.html`) çok küçük işletmeye uygun, KVKK m.10 unsurlarını (veri sorumlusu, veri/yöntem/amaç/hukuki sebep, saklama süresi 2 yıl, aktarım ve yurt dışı, haklar, başvuru ve 30 gün yanıt, Kurul'a şikâyet) kapsayacak biçimde yeniden yazıldı. Avukat incelemesi yapılmadı (Zihni: zaman ve bütçe yok); metin hukuki görüş yerine geçmez. Saklama süresi **2 yıl, Zihni onayladı** (12 Kasım). Pratikte: talebi sonuçlanan yazışmalar (WhatsApp, e-posta, arama kayıtları) 2 yıl sonra silinir; kanunen saklanması gereken fatura/sözleşme belgeleri hariç.
+
+## 12 Kasım 2026 gece: SİTE CANLI
+- Cloudflare DNS eklendi (hepsi DNS only): `@` için dört A kaydı (185.199.108–111.153), `www` CNAME → `zihinselvi.github.io`.
+- GitHub Pages: DNS check successful, "Enforce HTTPS" işaretli. https://zihniselvidijitaldanismanlik.com/ 200 (güncel sürüm, yeni portre, yeni gizlilik metni); `www` → ana adrese 301; olmayan sayfa 404.html gösteriyor.
+- Kalan: telefonda gerçek cihaz testi (menü, sabit header), paylaşım önizlemesi (LinkedIn Post Inspector, WhatsApp), Lighthouse'u canlı adreste ölç. "Yarına kalan/DNS" maddeleri tamamlandı.
+- Değişiklik akışı: kaynaklar `tools/src/`; `sh tools/derle.sh`; sonra `main`'e gider (Pages `main`'den yayınlar, birkaç dakikada günceller).
