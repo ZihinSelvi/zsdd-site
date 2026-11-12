@@ -24,3 +24,9 @@ Dal: `claude/confident-ritchie-vjbrlq` (PR açılmadı). Canlı alan adı: zihni
 - Ders: önizleme dosyasını depo klasörü dışında (boş klasörde) test et; küçültülmüş CSS'te `url()` tırnaksızdır.
 - Animasyon: halka döngüsü `tools/src/main.js` sonunda; `prefers-reduced-motion` açıkken halkalar sabit/soluk, nabız durur (bilerek). Yaklaşım kelime ağırlığı JS ile satır içi yazılır.
 - Son ölçüm: Lighthouse mobil 94–97 / 100 / 100 / 100, masaüstü 100 / 100 / 100 / 100 (yerel sunucu).
+
+## 12 Kasım 2026 oturumu
+- Mobil üst çubuk (header) sabit: kaydırırken gizlenme (`is-hidden`) kaldırıldı; `overflow-x:clip` eklendi.
+- Mobil menü (iki çizgi) kaydırılmış sayfada açılmıyordu: `.top` üzerindeki `backdrop-filter` `position:fixed` menüyü 84 px'e hapsediyordu. Zemin `.top::before` katmanına taşındı. Menüdeki "İletişim" düğmesinin iç boşluğu da düzeltildi.
+- **Ek hizmet (Matbaa ve reklam / ürün rayı) şimdilik kaldırıldı**: bölüm, menü bağlantısı, ilgili CSS/JS ve `site_uret.py` kısmı. `tools/urunler.json`, `tools/urunler.py`, `images/` ve ürün görselleri geri dönüş için duruyor; bölümün eski hâli git geçmişinde (`tools/index.template.html`).
+- Bu yüzden "Yarına kalan" listesindeki ürün yelpazesi maddeleri (görsel yer tutucular, adlandırma) şimdilik askıda.

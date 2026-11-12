@@ -53,16 +53,13 @@
   window.matchMedia('(min-width: 901px)').addEventListener('change', function (m) { if (m.matches && isOpen()) setOpen(false); });
 
   /* kaydırma: ilerleme, üst çubuk, sütun ağırlığı */
-  var bar = $('.progress i'), lastY = 0, ticking = false;
+  var bar = $('.progress i'), ticking = false;
   var pillars = $$('[data-weight]');
   function frame() {
     ticking = false;
     var y = window.scrollY, h = doc.scrollHeight - window.innerHeight;
     bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
     top.classList.toggle('is-solid', y > 40);
-    top.classList.toggle('is-hidden', y > 240 && y > lastY + 4 && !isOpen());
-    if (y < lastY - 4 || y < 240) top.classList.remove('is-hidden');
-    lastY = y;
     var vh = window.innerHeight;
     pillars.forEach(function (el) {
       var r = el.getBoundingClientRect(), c = r.top + Math.min(r.height, 220) / 2;
@@ -114,34 +111,6 @@
   /* hizmet bandı: kesintisiz döngü için kopya */
   var band = $('.band__t');
   if (band) { var row = $('.band__row', band); var c = row.cloneNode(true); c.setAttribute('aria-hidden', 'true'); band.appendChild(c); }
-
-  /* ürünler: kategori seçici + yatay ray */
-  var rail = $('#rail'), chips = $$('.chip'), cards = $$('.card'), durum = $('#kat-durum');
-  function setKat(k, announce) {
-    var n = 0;
-    cards.forEach(function (li) { var on = k === 'Tümü' || li.getAttribute('data-kat') === k; li.hidden = !on; if (on) n++; });
-    chips.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-kat') === k)); });
-    if (rail) rail.scrollLeft = 0;
-    if (announce && durum) durum.textContent = k + ': ' + n + ' ürün';
-  }
-  if (chips.length) {
-    chips.forEach(function (b) { b.addEventListener('click', function () { setKat(b.getAttribute('data-kat'), true); }); });
-  }
-  if (rail) {
-    var down = false, sx = 0, sl = 0, moved = 0;
-    rail.addEventListener('pointerdown', function (e) { if (e.pointerType === 'touch') return; down = true; moved = 0; sx = e.clientX; sl = rail.scrollLeft; });
-    window.addEventListener('pointermove', function (e) { if (!down) return; moved = e.clientX - sx; if (Math.abs(moved) > 5) rail.classList.add('is-drag'); rail.scrollLeft = sl - moved; });
-    window.addEventListener('pointerup', function () { down = false; setTimeout(function () { rail.classList.remove('is-drag'); }, 0); });
-    rail.addEventListener('click', function (e) { if (Math.abs(moved) > 5) { e.preventDefault(); e.stopPropagation(); moved = 0; } }, true);
-    $$('.rbtn').forEach(function (b) {
-      b.addEventListener('click', function () { rail.scrollBy({ left: parseInt(b.getAttribute('data-dir'), 10) * 320, behavior: reduce ? 'auto' : 'smooth' }); });
-    });
-    rail.addEventListener('keydown', function (e) {
-      if (e.target !== rail) return;
-      if (e.key === 'ArrowRight') rail.scrollBy({ left: 320, behavior: reduce ? 'auto' : 'smooth' });
-      if (e.key === 'ArrowLeft') rail.scrollBy({ left: -320, behavior: reduce ? 'auto' : 'smooth' });
-    });
-  }
 
   /* WhatsApp örnek akışı */
   var chat = $('#chat');
