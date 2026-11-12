@@ -181,8 +181,8 @@
         <p class="lead rv">Müşterinin WhatsApp'tan sorduğu fiyata, sizin fiyat listenizle yanıt veren bir sistem. Matbaa ve reklam işletmeleri için demo olarak kurdum; nasıl çalıştığını size gösterebilirim.</p>
         <ul class="ticks rv">
           <li>Sizin fiyat listenizle yanıt verir</li>
-          <li>Önce taslak, siz onaylayın</li>
-          <li>Müşteriye bir şey gitmez, karar sizde kalır</li>
+          <li>Onay beklemeden, hemen otomatik yanıt gönderir</li>
+          <li>Müşteri beklemez, siz işinize bakarsınız</li>
         </ul>
         <div class="actions rv" style="margin-top:0">
           <a class="btn btn--light" href="https://zihinselvi.github.io/fiyat-botu/" rel="noopener">Sistemi inceleyin</a>
@@ -191,17 +191,12 @@
       </div>
       <div class="phonewrap rv">
         <p class="phone__cap">Örnek akış</p>
-        <div class="phone" id="phone" role="img" aria-label="Örnek akış: müşteri fiyat sorar, sistem fiyat listesinden taslak yanıt hazırlar, siz onaylayınca yanıt gider. Gösterilen fiyat örnektir.">
+        <div class="phone" id="phone" role="img" aria-label="Örnek akış: müşteri fiyat sorar, sistem fiyat listesinden onay beklemeden hemen otomatik yanıt gönderir. Gösterilen fiyat örnektir.">
           <div class="phone__bar"><i></i><b>Müşteri</b><small>çevrimiçi</small></div>
           <div class="chat" id="chat">
             <div class="msg msg--in" data-step="1">Merhaba, roll-up banner fiyatı nedir?</div>
             <div class="typing" data-step="2"><i></i><i></i><i></i></div>
-            <div class="msg msg--draft" data-step="3">
-              <small>Taslak yanıt · önce taslak, siz onaylayın</small>
-              Merhaba! Roll-up banner fiyatı <u>₺350</u> <i>(örnek)</i>. Ölçü ve adedi yazarsanız net teklifi hemen ileteyim.
-              <span class="acts"><em>Düzenle</em><strong>Onayla ve gönder</strong></span>
-            </div>
-            <div class="msg msg--out" data-step="4">Merhaba! Roll-up banner fiyatı <u>₺350</u> <i>(örnek)</i>. Ölçü ve adedi yazarsanız net teklifi hemen ileteyim.<small>Gönderildi · onayınızla</small></div>
+            <div class="msg msg--out" data-step="3">Merhaba! Roll-up banner fiyatı <u>₺350</u> <i>(örnek)</i>. Ölçü ve adedi yazarsanız net teklifi hemen ileteyim.<small>Otomatik yanıt · hemen gönderildi</small></div>
           </div>
         </div>
         <p class="phone__note">Gösterilen fiyat örnektir; gerçek fiyat sizin listenizden gelir.</p>
