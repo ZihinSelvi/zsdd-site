@@ -61,3 +61,8 @@ Dal: `claude/confident-ritchie-vjbrlq` (PR açılmadı). Canlı alan adı: zihni
 ## 12 Kasım 2026, demo çelişkisi düzeltildi
 - WhatsApp demosunda "Taslak yanıt / Onayla ve gönder" adımı vardı, oysa gerçek sistem onay beklemeden hemen yanıt gönderiyor. Düzeltildi: demo artık soru → yazıyor göstergesi → "Otomatik yanıt · hemen gönderildi". Madde listesi ve ekran okuyucu etiketi de güncellendi ("Onay beklemeden, hemen otomatik yanıt gönderir", "Müşteri beklemez, siz işinize bakarsınız"). Sitede "taslak/onay" ifadesi kalmadı. "Sistemi inceleyin" sayfasında bu çelişki yoktu.
 - Zihni onayladı (12 Kasım): "Müşteri beklemez, siz işinize bakarsınız" maddesi kalıyor. Canlı kontrol: tüm dosyalar 200, 404 sayfası çalışıyor, og/canonical doğru, sitemap tarihi 12 Kasım'a çekildi. Lighthouse bu ortamda yok; telefonda ya da PageSpeed Insights ile ölçülebilir.
+
+## 12 Kasım 2026 oturum kapanışı
+- Site canlı ve doğrulandı: https://zihniselvidijitaldanismanlik.com/ (HTTPS, www → ana adres). Telefonda mobil header, menü, portre ve WhatsApp demosu Zihni tarafından denendi, hepsi çalışıyor.
+- `main` = yayın dalı (temiz sürüm, `_teslim/` ve tedarikçi PDF'i yok). Çalışma dalı `claude/focused-shannon-0qglq6` site dosyaları bakımından `main` ile aynı; ek olarak `_teslim/` ve `_kaynak/` içindeki kaynak/teslim dosyalarını taşır. Dal bilerek `main`'e olduğu gibi birleştirilmedi; site değişikliklerini `main`'e seçerek (yeni commit) aktarıyoruz.
+- Sıradaki (acil değil): WhatsApp paylaşım önizlemesi kontrolü, PageSpeed ölçümü, gizlilik metninde 2 yıllık saklama kuralının yılda bir uygulanması (eski yazışmaları sil), `sosyal-medya` deposunda `claude/laughing-maxwell-j1j7ky` dalındaki 400'lük portre dosyalarının main'e alınması.
