@@ -115,18 +115,17 @@
   /* WhatsApp örnek akışı */
   var chat = $('#chat');
   if (chat) {
-    var m1 = $('[data-step="1"]', chat), ty = $('[data-step="2"]', chat), dr = $('[data-step="3"]', chat), out = $('[data-step="4"]', chat), btn = $('.acts strong', chat);
+    var m1 = $('[data-step="1"]', chat), ty = $('[data-step="2"]', chat), out = $('[data-step="3"]', chat);
     var timers = [], running = false;
     var later = function (fn, ms) { timers.push(setTimeout(fn, ms)); };
-    var reset = function () { [m1, ty, dr, out].forEach(function (x) { x.classList.remove('show'); }); btn.classList.remove('is-press'); };
+    var reset = function () { [m1, ty, out].forEach(function (x) { x.classList.remove('show'); }); };
+    /* gerçek sistem gibi: soru gelir, onay beklenmeden yanıt hemen gider */
     var play = function () {
       reset();
       later(function () { m1.classList.add('show'); }, 500);
       later(function () { ty.classList.add('show'); }, 1700);
-      later(function () { ty.classList.remove('show'); dr.classList.add('show'); }, 3300);
-      later(function () { btn.classList.add('is-press'); }, 6400);
-      later(function () { dr.classList.remove('show'); out.classList.add('show'); }, 7100);
-      later(play, 12500);
+      later(function () { ty.classList.remove('show'); out.classList.add('show'); }, 2600);
+      later(play, 9500);
     };
     if (reduce || !hasIO) { m1.classList.add('show'); out.classList.add('show'); }
     else {

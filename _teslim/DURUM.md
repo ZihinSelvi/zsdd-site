@@ -57,3 +57,6 @@ Dal: `claude/confident-ritchie-vjbrlq` (PR açılmadı). Canlı alan adı: zihni
 - GitHub Pages: DNS check successful, "Enforce HTTPS" işaretli. https://zihniselvidijitaldanismanlik.com/ 200 (güncel sürüm, yeni portre, yeni gizlilik metni); `www` → ana adrese 301; olmayan sayfa 404.html gösteriyor.
 - Kalan: telefonda gerçek cihaz testi (menü, sabit header), paylaşım önizlemesi (LinkedIn Post Inspector, WhatsApp), Lighthouse'u canlı adreste ölç. "Yarına kalan/DNS" maddeleri tamamlandı.
 - Değişiklik akışı: kaynaklar `tools/src/`; `sh tools/derle.sh`; sonra `main`'e gider (Pages `main`'den yayınlar, birkaç dakikada günceller).
+
+## 12 Kasım 2026, demo çelişkisi düzeltildi
+- WhatsApp demosunda "Taslak yanıt / Onayla ve gönder" adımı vardı, oysa gerçek sistem onay beklemeden hemen yanıt gönderiyor. Düzeltildi: demo artık soru → yazıyor göstergesi → "Otomatik yanıt · hemen gönderildi". Madde listesi ve ekran okuyucu etiketi de güncellendi ("Onay beklemeden, hemen otomatik yanıt gönderir", "Müşteri beklemez, siz işinize bakarsınız"). Sitede "taslak/onay" ifadesi kalmadı. "Sistemi inceleyin" sayfasında bu çelişki yoktu.
