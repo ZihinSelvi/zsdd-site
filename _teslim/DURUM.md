@@ -60,3 +60,4 @@ Dal: `claude/confident-ritchie-vjbrlq` (PR açılmadı). Canlı alan adı: zihni
 
 ## 12 Kasım 2026, demo çelişkisi düzeltildi
 - WhatsApp demosunda "Taslak yanıt / Onayla ve gönder" adımı vardı, oysa gerçek sistem onay beklemeden hemen yanıt gönderiyor. Düzeltildi: demo artık soru → yazıyor göstergesi → "Otomatik yanıt · hemen gönderildi". Madde listesi ve ekran okuyucu etiketi de güncellendi ("Onay beklemeden, hemen otomatik yanıt gönderir", "Müşteri beklemez, siz işinize bakarsınız"). Sitede "taslak/onay" ifadesi kalmadı. "Sistemi inceleyin" sayfasında bu çelişki yoktu.
+- Zihni onayladı (12 Kasım): "Müşteri beklemez, siz işinize bakarsınız" maddesi kalıyor. Canlı kontrol: tüm dosyalar 200, 404 sayfası çalışıyor, og/canonical doğru, sitemap tarihi 12 Kasım'a çekildi. Lighthouse bu ortamda yok; telefonda ya da PageSpeed Insights ile ölçülebilir.
