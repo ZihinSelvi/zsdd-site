@@ -4,17 +4,11 @@ Zihni Selvi Dijital Danışmanlık internet sitesi (statik HTML/CSS/JS, GitHub P
 
 ## Durum (12 Kasım 2026)
 
-**İçerik ve tasarım tamam. GitHub Pages açık, ama site henüz canlı değil: alan adının DNS kayıtları eklenmedi.**
+**Site canlı: https://zihniselvidijitaldanismanlik.com/** GitHub Pages `main` dalından (`/ root`) yayınlanır, HTTPS zorunludur. DNS Cloudflare'dedir: `@` için dört A kaydı (`185.199.108.153` … `185.199.111.153`) ve `www` CNAME → `zihinselvi.github.io`, hepsi "DNS only" (gri bulut; turuncu bulut GitHub sertifikasını bozar).
 
-Kalan iş (Cloudflare DNS, hepsi "DNS only" / gri bulut):
+Gizlilik metni (`gizlilik.html`) küçük işletmeye uygun, KVKK m.10 unsurlarını içeren sade bir metindir; avukat incelemesi yapılmadı, hukuki görüş yerine geçmez. Saklama süresi: talep sonuçlandıktan sonra en fazla 2 yıl.
 
-1. `@` için dört A kaydı: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`. Eski A/AAAA kaydı varsa sil.
-2. `www` için CNAME → `zihinselvi.github.io`.
-3. GitHub alan adı doğrulaması (Settings → Pages → Verified domains) TXT kaydı isterse onu da ekle.
-4. Settings → Pages → "Check again", sonra "Enforce HTTPS"i işaretle.
-5. Canlı kontrol: telefonda aç, `www` yönlendirmesi, paylaşım önizlemesi (LinkedIn Post Inspector).
-
-Gizlilik metni (`gizlilik.html`) küçük işletmeye uygun, KVKK m.10 unsurlarını içeren sade bir metindir; avukat incelemesi yapılmadı, hukuki görüş yerine geçmez.
+Kalan: gerçek telefonda test, paylaşım önizlemesi (LinkedIn Post Inspector), canlı adreste Lighthouse.
 
 ## Dosyalar
 
