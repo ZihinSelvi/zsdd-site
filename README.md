@@ -21,3 +21,4 @@ Kalan: gerçek telefonda test, paylaşım önizlemesi (LinkedIn Post Inspector),
 - Mobilde üst çubuk sabittir (kaydırırken gizlenmez). Menü zemini `.top::before` katmanındadır: `.top` üzerine `backdrop-filter` konursa `position:fixed` mobil menü 84 px'lik çubuğa hapsolur.
 - "Ek hizmet" (matbaa ve reklam ürün rayı) kaldırıldı ve geri gelmeyecek.
 - Tek kişi fotoğrafı `assets/img/` altındaki onaylı kare portredir; yalnızca "Zihni Selvi kimdir?" bölümünde kullanılır. Paylaşım görseli (`og:image`) 1200×630 `og-image.png` kalır (kare görsel önizlemede kırpılır).
+- Ölçüm (16 Kas 2026, Zihni): sitede sayaç/analitik yok, gizlilik sözü korunur. Sosyal medya linklerine `?k=linkedin|instagram|facebook|whatsapp|kartvizit|eposta` (ya da `utm_source`) eklenir; `tools/src/main.js` bu etiketi yalnızca WhatsApp mesaj taslağına "(Kaynak: …)" olarak yazar. Hiçbir veri dışarı gitmez.

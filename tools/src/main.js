@@ -9,6 +9,18 @@
 
   var yil = $('#yil'); if (yil) yil.textContent = new Date().getFullYear();
 
+  /* kaynak etiketi: sosyal medya linklerindeki ?k=linkedin gibi etiket yalnızca WhatsApp mesaj taslağına
+     "(Kaynak: LinkedIn)" notu ekler. Çerez, depolama ya da dışarıya istek yok; ziyaretçi göndermeden silebilir. */
+  var KAYNAK = { linkedin: 'LinkedIn', instagram: 'Instagram', facebook: 'Facebook', whatsapp: 'WhatsApp', kartvizit: 'kartvizit', eposta: 'e-posta' };
+  try {
+    var qs = new URLSearchParams(location.search), kay = KAYNAK[(qs.get('k') || qs.get('utm_source') || '').toLowerCase()];
+    if (kay) $$('a[href^="https://wa.me/"]').forEach(function (a) {
+      var i = a.href.indexOf('?text='); if (i < 0) return;
+      var t = decodeURIComponent(a.href.slice(i + 6));
+      a.href = a.href.slice(0, i) + '?text=' + encodeURIComponent(t + ' (Kaynak: ' + kay + ')');
+    });
+  } catch (e) {}
+
   /* açılış */
   var hero = $('.hero');
   function loaded() { if (hero) hero.classList.add('is-loaded'); }
